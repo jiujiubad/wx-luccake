@@ -9,8 +9,8 @@
   box-sizing: border-box;
 }
 page {
-font-size: 30rpx;
-color: #353535;
-letter-spacing: 2rpx;
-line-height: 45rpx;
+  font-size: 30rpx;
+  color: #353535;
+  letter-spacing: 2rpx;
+  line-height: 45rpx;
 }
