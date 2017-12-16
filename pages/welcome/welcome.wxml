@@ -1,4 +1,11 @@
 <view class="Box-welcome">
+  <swiper class="box-intro" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{movies}}" wx:key="">
+      <swiper-item>
+         <image src="{{item.url}}" mode="aspectFill"/>
+      </swiper-item>
+    </block>
+  </swiper>
   <view wx:for="{{weldata}}" wx:key="" class="box-product">
     <image src='{{item.image.url}}'></image>
     <view class='product-text1'>{{item.title}}</view>

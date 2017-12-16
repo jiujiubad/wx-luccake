@@ -1,3 +1,11 @@
+.box-intro {
+ height: 400rpx;
+ width: 100%; /*非常重要的值，没有就不会显示轮播*/
+}
+.box-intro image {
+ width: 100%;
+}
+
 .Box-welcome {
 display: flex;
 flex-flow: row wrap;
