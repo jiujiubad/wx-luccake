@@ -6,7 +6,12 @@
       </swiper-item>
     </block>
   </swiper>
-  <view wx:for="{{weldata}}" wx:key="" class="box-product">
+
+  <view class="box-search">
+    <input type="text" placeholder="翻糖蛋糕清新款" focus/>
+  </view>
+
+  <view class="box-product" wx:for="{{weldata}}" wx:key="" >
     <image src='{{item.image.url}}'></image>
     <view class='product-text1'>{{item.title}}</view>
     <view class='product-text2'>{{item.description}}</view>
