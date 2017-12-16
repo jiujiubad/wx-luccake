@@ -1,0 +1,20 @@
+.Box-welcome {
+display: flex;
+flex-flow: row wrap;
+justify-content: space-between;
+padding:1%;
+}
+.box-product {
+width:49%;
+margin-top:1%;
+text-align:center;
+border: 1rpx solid #e8e8e8;
+}
+.box-product image {
+width:100%;
+height: 330rpx;
+}
+.product-text2 {
+color: #888888;
+font-size: 25rpx;
+}

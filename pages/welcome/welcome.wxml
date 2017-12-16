@@ -1,0 +1,7 @@
+<view class="Box-welcome">
+  <view wx:for="{{weldata}}" wx:key="" class="box-product">
+    <image src='{{item.image.url}}'></image>
+    <view class='product-text1'>{{item.title}}</view>
+    <view class='product-text2'>{{item.description}}</view>
+  </view>
+</view>
