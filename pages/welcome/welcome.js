@@ -10,7 +10,7 @@ Page({
   onShow: function () {
     var that = this;
     wx.request({
-      url: 'https://wx-luccake.herokuapp.com/api/v1/products',
+      url: 'https://luccake.top/api/v1/products',
       header: {
         'content-type': 'application/json'
       },

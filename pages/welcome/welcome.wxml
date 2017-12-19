@@ -14,6 +14,6 @@
   <view class="box-product" wx:for="{{weldata}}" wx:key="" >
     <image src='{{item.image.url}}'></image>
     <view class='product-text1'>{{item.title}}</view>
-    <view class='product-text2'>{{item.description}}</view>
+    <view class='product-text2'>¥ {{item.price}}</view>
   </view>
 </view>
