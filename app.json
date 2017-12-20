@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/welcome/welcome",
+    "pages/category/cagegory",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -11,20 +12,27 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
-    "list": [{
-      "pagePath": "pages/welcome/welcome",
-      "iconPath": "image/icon_component.png",
-      "selectedIconPath": "image/icon_component_HL.png",
-      "text": "主页"
-    }, {
-      "pagePath": "pages/logs/logs",
-      "iconPath": "image/icon_API.png",
-      "selectedIconPath": "image/icon_API_HL.png",
-      "text": "分类"
-    }]
+    "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "selectedColor": "#b4282d",
+    "color": "#666",
+    "list": [
+      { "pagePath": "pages/welcome/welcome",
+        "iconPath": "image/ic_menu_index.png",
+        "selectedIconPath": "image/ic_menu_index_HL.png",
+        "text": "主页" },
+      { "pagePath": "pages/category/category",
+        "iconPath": "image/ic_menu_category.png",
+        "selectedIconPath": "image/ic_menu_category_HL.png",
+        "text": "分类" },
+      { "pagePath": "pages/categories/welcome",
+        "iconPath": "image/ic_menu_topic.png",
+        "selectedIconPath": "image/ic_menu_topic_HL.png",
+        "text": "专题" },
+      { "pagePath": "pages/welcome/welcome",
+        "iconPath": "image/ic_menu_me.png",
+        "selectedIconPath": "image/ic_menu_me_HL.png",
+        "text": "我的" }
+    ]
   }
 }
