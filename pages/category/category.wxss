@@ -1,0 +1,51 @@
+.search {
+  height: 88rpx;
+  width: 100%;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+}
+.search .input {
+  width: 690rpx;
+  height: 56rpx;
+  background: #ededed;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search .icon {
+  background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-2fb94833aa.png) center no-repeat;
+  background-size: 100%;
+  width: 28rpx;
+}
+.search .txt {
+  color: #888;
+  font-size: 30rpx;
+}
+
+.catalog {
+  flex: 1;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  border-top: 1px solid #fafafa;
+}
+.catalog .nav {
+  width: 162rpx;
+  height: 100%;
+}
+.catalog .nav .item {
+  text-align: center;
+  line-height: 90rpx;
+  width: 162rpx;
+  height: 90rpx;
+  color: #333;
+  font-size: 28rpx;
+  border-left: 6rpx solid #fff;
+}
+.catalog .nav .item.active {
+  color: #ab2b2b;
+  font-size: 36rpx;
+  border-left: 6rpx solid #ab2b2b;
+}

@@ -1,0 +1,23 @@
+.box{
+  display:flex;
+  justify-content: space-between;
+}
+.content{
+  height: 2000rpx;
+}
+.category{
+  background: green;
+}
+.address_top{
+  background: yellow;
+  height: 76rpx;
+}
+.address_bottom{
+  height: 88rpx;
+}
+.orientation_region{
+  background: yellow;
+}
+.orientation_city.active{ /*测试变量classifySelected是否等于{{item.id}}，改变字色*/
+  color: red;
+}

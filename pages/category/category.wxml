@@ -1,0 +1,24 @@
+  <view class="search">
+    <navigator url="/pages/search/search" class="input">
+      <image class="icon"></image>
+      <text class="txt">商品搜索</text>
+    </navigator>
+  </view>
+
+    <view class="catalog">
+    <scroll-view class="nav" scroll-y="true">
+      <block wx:for="{{newsda}}" wx:key="">
+        <view class="item {{cur_id == item.id ? 'active' : ''}}" bindtap="loadData" data-categoryid="{{item.id}}">
+          {{item.name}}
+        </view>  
+      </block>
+    </scroll-view>
+    <scroll-view class="cate" scroll-y="true">
+      <block wx:for="{{newsdata}}" wx:key="">
+        <view class="item">
+          <image src="{{item.image.url}}"></image>
+          <text>{{item.title}}</text>
+        </view>  
+      </block> 
+    </scroll-view>   
+  </view> 

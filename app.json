@@ -1,7 +1,9 @@
 {
   "pages":[
+    "pages/category/category",
+    "pages/99/99",
     "pages/welcome/welcome",
-    "pages/category/cagegory",
+    
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -25,7 +27,7 @@
         "iconPath": "image/ic_menu_category.png",
         "selectedIconPath": "image/ic_menu_category_HL.png",
         "text": "分类" },
-      { "pagePath": "pages/categories/welcome",
+      { "pagePath": "pages/99/99",
         "iconPath": "image/ic_menu_topic.png",
         "selectedIconPath": "image/ic_menu_topic_HL.png",
         "text": "专题" },
