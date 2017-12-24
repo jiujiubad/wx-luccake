@@ -1,38 +1,36 @@
-// pages/exercies/index.js
 Page({
   data: {
-
+    navList: [],
+    left_id: '',
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    this.getCategory();
+  },
+  getCategory: function () {
     var that = this;
+    wx.showLoading({
+      title: '加载中...',
+    });
     wx.request({
-      url: 'https://luccake.top/api/v1/categories', //仅为示例，并非真实的接口地址
+      url: 'https://luccake.top/api/v1/categories',
       header: {
         'content-type': 'application/json' // 默认值
       },
-      success: function (res) {
+      success: function(res) {
         console.log(res.data)
         that.setData({
-          newsda: res.data.categories
-        })
+          navList: res.data.categories
+        });
+        wx.hideLoading();
       }
     })
   },
-  loadData: function (e) {
-    var that = this;
-    console.log(e.target.dataset.categoryid); //测试console是否显示id号，这行可删除。
-    wx.request({
-      url: 'https://luccake.top/api/v1/categories/' + e.target.dataset.categoryid, //仅为示例，并非真实的接口地址
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        console.log(res.data)
-        that.setData({
-          newsdata: res.data.products,
-          cur_id: res.data.id,
-        })
-      }
+  switch_1: function(e){
+    console.log(e)
+    var _id = e.currentTarget.dataset.id
+    console.log(_id)
+    this.setData({
+      left_id: _id
     })
   }
 })
