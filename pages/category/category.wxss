@@ -58,7 +58,6 @@
 }
 
 
-
 /*右侧分类标题*/
 .category .right {
   border-left: 1px solid #fafafa;
@@ -66,15 +65,13 @@
   height: 100%;
   padding: 0 30rpx 0 30rpx;
 }
-
 .banner {
   display: block;
   height: 222rpx;
   width: 100%;
   position: relative;
 }
-
-.banner .image {
+.banner image {
   position: absolute;
   top: 30rpx;
   left: 0;
@@ -82,8 +79,7 @@
   height: 192rpx;
   width: 100%;
 }
-
-.banner .txt {
+.banner text {
   position: absolute;
   top: 30rpx;
   text-align: center;
@@ -94,7 +90,6 @@
   line-height: 192rpx;
   width: 100%;
 }
-
 .category .hd {
   height: 108rpx;
   width: 100%;
@@ -102,7 +97,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .category .hd .txt {
   font-size: 24rpx;
   text-align: center;
@@ -110,13 +104,11 @@
   padding: 0 10rpx;
   width: auto;
 }
-
 .category .hd .line {
   width: 40rpx;
   height: 1px;
   background: #d9d9d9;
 }
-
 .category .bd {
   height: auto;
   width: 100%;
