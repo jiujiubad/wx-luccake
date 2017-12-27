@@ -1,0 +1,7 @@
+9999
+<view wx:for="{{newsdata}}" wx:key="">
+  <view>{{item.title}}</view>
+  <image src="{{item.avatar.medium.url}}"></image>
+</view>
+
+<view>{{tt.title}}</view>
