@@ -17,7 +17,7 @@ Page({
       success: function (res) {
         console.log(res.data)
         that.setData({
-          weldata: res.data.products
+          weldata: res.data.data
         })
       }
     })

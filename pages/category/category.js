@@ -21,8 +21,8 @@ Page({
       success: function(res) {
         console.log(res.data)
         that.setData({
-          navLeftList: res.data.categories,
-          navRightList: res.data.categories
+          navLeftList: res.data.data,
+          navRightList: res.data.data
         });
         wx.hideLoading();
       }
