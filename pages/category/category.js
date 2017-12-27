@@ -1,7 +1,9 @@
 Page({
   data: {
-    navList: [],
-    left_id: '',
+    navLeftList: [],
+    categoryList: [],
+    left_id: 1,
+    curIndex: 0,
   },
   onLoad: function (options) {
     this.getCategory();
@@ -19,18 +21,23 @@ Page({
       success: function(res) {
         console.log(res.data)
         that.setData({
-          navList: res.data.categories
+          navLeftList: res.data.categories,
+          navRightList: res.data.categories
         });
         wx.hideLoading();
       }
     })
   },
-  switch_1: function(e){
+
+  switch_right: function(e){
     console.log(e)
-    var _id = e.currentTarget.dataset.id
+    var _id = e.currentTarget.dataset.id,
+    index = e.currentTarget.dataset.index;
     console.log(_id)
+    console.log(index)
     this.setData({
-      left_id: _id
+      left_id: _id,
+      curIndex: index
     })
   }
 })

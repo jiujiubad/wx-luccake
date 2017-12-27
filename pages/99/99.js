@@ -93,6 +93,7 @@ Page({
     classifySelected: ''
   },
   onLoad: function (options) {
+    console.log(this.data)
     this.setData({
       classifySelected: this.data.orientationlist[0]['id']
     })

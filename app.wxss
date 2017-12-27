@@ -6,10 +6,11 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+  overflow: hidden;
 }
 page {
   font-size: 30rpx;
-  color: #353535;
-  letter-spacing: 2rpx;
+  color: #666;
+  letter-spacing: 1rpx;
   line-height: 45rpx;
 }
