@@ -1,7 +1,60 @@
-9999
-<view wx:for="{{newsdata}}" wx:key="">
-  <view>{{item.title}}</view>
-  <image src="{{item.avatar.medium.url}}"></image>
+<swiper class="goodsimgs" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+  <swiper-item wx:for="{{picdata}}" wx:key="">
+    <image src="{{item.avatar.medium.url}}" ></image>
+  </swiper-item>
+</swiper>
+
+<view class="service-policy">
+  <view class="item">30天无忧退货</view>
+  <view class="item">48小时快速退款</view>
+  <view class="item">满88元免邮费</view>
 </view>
 
-<view>{{tt.title}}</view>
+<view class="goods-info">
+  <view class="c">
+    <text class="name">{{goods.title}}</text>
+    <text class="desc">{{goods.description}}</text>
+    <text class="price">￥{{goods.price}}</text>
+    <view class="brand" wx:if="{{brand.name}}">
+      <navigator url="../brandDetail/brandDetail?id={{brand.brandId}}">
+        <text>{{brand.name}}</text>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+
+<!-- banner -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<scroll-view scroll-y="true">
+  <view class="detail">
+    <text class="title">LANCOME兰蔻小黑瓶精华肌底液</text>
+    <text class="price">￥500</text>
+  </view>
+  <view class="separate"></view>
+  <!-- sku选择 -->
+  <text bindtap="toggleDialog">请选择购买数量</text>
+  <view class="separate"></view>
+  <text>商品评价</text>
+  <text class="text-remark">东西还可以，好评~</text>
+  <view class="separate"></view>
+  <text>商品详情</text>
+  <block wx:for-items="{{detailImg}}" wx:key="name">
+    <image class="image_detail" src="{{item}}" />
+  </block>
+  <view class="temp"></view>
+</scroll-view>
+<!-- 底部悬浮栏 -->
+<view class="detail-nav">
+  <image bindtap="toCar" src="../../images/detail/detail_btn_cart.png" />
+  <view class="line_nav"></view>
+  <image bindtap="addLike" src="{{isLike?'../../images/detail/detail_btn_mark_selected.png':'../../images/detail/detail_btn_mark_normal.png'}}" />
+  <button class="button-green" bindtap="addCar" formType="submit">加入购物车</button>
+  <button class="button-red" bindtap="immeBuy" formType="submit">立即购买</button>
+</view>
