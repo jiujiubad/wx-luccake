@@ -12,7 +12,7 @@
   </view>
 
   <view class="box-product" wx:for="{{weldata}}" wx:key="" >
-    <image src='{{item.image.url}}'></image>
+    <image src='{{item.photos[0].avatar.url}}'></image>
     <view class='product-text1'>{{item.title}}</view>
     <view class='product-text2'>¥ {{item.price}}</view>
   </view>

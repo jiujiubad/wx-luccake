@@ -22,3 +22,6 @@
     </view>
   </view>
 </view>
+
+
+  <image class="detail_img" mode="widthFix" src='{{goods.detail_image.url}}'></image>
