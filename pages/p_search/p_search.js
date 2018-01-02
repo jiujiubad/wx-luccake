@@ -1,4 +1,4 @@
-var API_URL = 'https://luccake.top/api/v1/products/search'
+var API_URL = 'https://luccake.top/v2/products/search'
 Page({
   data: {
     cakes: []
@@ -18,7 +18,7 @@ Page({
     wx.request({
       url: API_URL + "?utf8=✓&q=" + e.detail.value,
       header: {
-        'content-type': 'json' // 默认值
+        'content-type': 'application/json' // 默认值
       },
       success: function (res) {
         console.log(res.data)

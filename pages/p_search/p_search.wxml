@@ -1,7 +1,20 @@
 <view class="p_search-head">
-  <view class='input'>
+  <view class='p_search-input'>
     <icon type="search" size="18" color='#999' />
     <input placeholder='输入搜索关键词' placeholder-style="color:#D1D1D1" auto-focus bindchange="search"/>
   </view>
   <button size='mini' bindchange='search'>搜索</button>
-</view>
+</view> 
+
+<scroll-view class='p_search-body' scroll-y>
+  <navigator url='../p_goods/p_goods' wx:for="{{cakes}}" wx:key="">
+    <view class='p_search-box'>
+      <image src="{{item.photos[0].avatar.url}}"></image>
+      <view class='p_search-post'>
+        <text class='title'>{{item.title}}</text>
+        <text class='description'>{{item.description}}</text>
+        <text class='price'>¥ {{item.price}}</text>
+      </view>
+    </view>
+  </navigator>
+</scroll-view>
