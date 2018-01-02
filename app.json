@@ -1,10 +1,10 @@
 {
   "pages":[
-    
+    "pages/p_search/p_search",
     "pages/category/category",
     "pages/99/99",
     "pages/p_goods/p_goods",
-    "pages/p_search/p_search",
+    
     "pages/welcome/welcome",
     "pages/test/test"
   ],

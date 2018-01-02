@@ -1,2 +1,7 @@
-<!--pages/p_search/p_search.wxml-->
-<text>pages/p_search/p_search.wxml</text>
+<view class="p_search-head">
+  <view class='input'>
+    <icon type="search" size="18" color='#999' />
+    <input placeholder='输入搜索关键词' placeholder-style="color:#D1D1D1" auto-focus bindchange="search"/>
+  </view>
+  <button size='mini' bindchange='search'>搜索</button>
+</view>

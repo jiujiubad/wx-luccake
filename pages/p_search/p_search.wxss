@@ -1,1 +1,25 @@
-/* pages/p_search/p_search.wxss */
+.p_search-head{
+  display: flex;
+  flex-direction: row;
+}
+.input{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 570rpx;
+  height: 70rpx;
+  border-radius: 25rpx;
+  background: #EEE;
+  margin-left: 20rpx;
+}
+.input icon{
+  padding: 10rpx 20rpx;
+  height: 40rpx;
+}
+.p_search-head button{
+  display: flex;
+  align-items: center;
+  background: red;
+  color: #fff;
+  margin-right: 20rpx;
+}
