@@ -1,11 +1,9 @@
-var API_URL = 'https://luccake.top/v2/products/search'
+var API_URL = 'https://luccake.top/api/v1/products/search'
 Page({
   data: {
     cakes: []
   },
   search: function (e) {
-    var aaa = API_URL + "?utf8=✓&q=" + e.detail.value
-    console.log(aaa)
     if (!e.detail.value) {
       return;
     }
@@ -15,8 +13,9 @@ Page({
       duration: 10000
     });
     var that = this; //保存this的数据
+    var utf = encodeURI(e.detail.value)
     wx.request({
-      url: API_URL + "?utf8=✓&q=" + e.detail.value,
+      url: API_URL + "?utf8=%E2%9C%93&q=" + utf,
       header: {
         'content-type': 'application/json' // 默认值
       },
