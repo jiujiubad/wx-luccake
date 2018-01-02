@@ -3,11 +3,10 @@
     
     "pages/category/category",
     "pages/99/99",
-    "pages/goods/goods",
+    "pages/p_goods/p_goods",
+    "pages/p_search/p_search",
     "pages/welcome/welcome",
-    
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/test/test"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -33,10 +32,10 @@
         "iconPath": "image/ic_menu_topic.png",
         "selectedIconPath": "image/ic_menu_topic_HL.png",
         "text": "专题" },
-      { "pagePath": "pages/welcome/welcome",
+      { "pagePath": "pages/test/test",
         "iconPath": "image/ic_menu_me.png",
         "selectedIconPath": "image/ic_menu_me_HL.png",
-        "text": "我的" }
+        "text": "测试" }
     ]
   }
 }

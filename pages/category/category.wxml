@@ -1,6 +1,6 @@
 <view class='container'>
   <view class='search'>
-    <navigator url="/pages/search/search" class="input">
+    <navigator url="/pages/p_search/p_search" class="input">
       <image></image>
       <text>商品搜索, 共xxx款好物</text>
     </navigator>
@@ -23,7 +23,7 @@
         <text class="line"></text>
       </view>
       <view class="bd" wx:if="{{navRightList[curIndex].products}}">
-        <navigator class="item {{(index+1)%3==0? 'last':''}}" url="../goods/goods?id={{item.id}}" wx:for="{{navRightList[curIndex].products}}" wx:key="">
+        <navigator class="item {{(index+1)%3==0? 'last':''}}" url="../p_goods/p_goods?id={{item.id}}" wx:for="{{navRightList[curIndex].products}}" wx:key="">
           <image src="{{item.photos[0].avatar.url}}"></image>
           <text>{{item.title}}</text>
         </navigator>
