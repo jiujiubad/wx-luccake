@@ -7,6 +7,11 @@ Page({
    {url:'https://ws4.sinaimg.cn/large/006tNc79gy1fmizus0vlkj30qm0qmdib.jpg'}
    ]
   },
+  search: function () {
+    wx.navigateTo({
+      url: '../search/search'
+    })
+  },
   onShow: function () {
     var that = this;
     wx.request({
