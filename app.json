@@ -1,23 +1,21 @@
 {
   "pages":[
     "pages/category/category",
-    "pages/99/99",
     "pages/p_goods/p_goods",
-        "pages/p_search/p_search",
-        
+    "pages/p_search/p_search",
     "pages/welcome/welcome",
-    "pages/test/test"
+    "pages/shoppingcart/shoppingcart",
+    "pages/order/order"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "99-Cake",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
-    "backgroundColor": "#fafafa",
-    "borderStyle": "white",
-    "selectedColor": "#b4282d",
+    "backgroundColor": "#fff",
+    "selectedColor": "#E4393C",
     "color": "#666",
     "list": [
       { "pagePath": "pages/welcome/welcome",
@@ -28,14 +26,14 @@
         "iconPath": "image/ic_menu_category.png",
         "selectedIconPath": "image/ic_menu_category_HL.png",
         "text": "分类" },
-      { "pagePath": "pages/99/99",
-        "iconPath": "image/ic_menu_topic.png",
-        "selectedIconPath": "image/ic_menu_topic_HL.png",
-        "text": "专题" },
-      { "pagePath": "pages/test/test",
-        "iconPath": "image/ic_menu_me.png",
-        "selectedIconPath": "image/ic_menu_me_HL.png",
-        "text": "测试" }
+      { "pagePath": "pages/shoppingcart/shoppingcart",
+        "iconPath": "images/bar/shoppingcart-0.jpg",
+        "selectedIconPath": "images/bar/shoppingcart-1.jpg",
+        "text": "购物车" },
+      { "pagePath": "pages/order/order",
+        "iconPath": "images/bar/order-0.jpg",
+        "selectedIconPath": "images/bar/order-1.jpg",
+        "text": "我的订单" }
     ]
   }
 }

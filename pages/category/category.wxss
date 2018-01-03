@@ -117,7 +117,7 @@
   display: block;
   float: left;
   height: 220rpx;
-  width: 29.6%;
+  width: 29%;
   margin-right: 30rpx;
 }
 .category .bd .item.last {
