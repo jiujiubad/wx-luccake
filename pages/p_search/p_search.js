@@ -1,4 +1,4 @@
-var API_URL = 'https://luccake.top/api/v1/products/search'
+var API_URL = 'https://luccake.top/api/v1/products?utf8=%E2%9C%93&q%5Btitle_or_description_cont%5D='
 Page({
   data: {
     cakes: []
@@ -15,7 +15,7 @@ Page({
     var that = this; //保存this的数据
     var utf = encodeURI(e.detail.value)
     wx.request({
-      url: API_URL + "?utf8=%E2%9C%93&q=" + utf,
+      url: API_URL + utf + "&commit=Search",
       header: {
         'content-type': 'application/json' // 默认值
       },
