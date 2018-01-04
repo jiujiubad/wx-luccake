@@ -9,7 +9,7 @@ Page({
   },
   search: function () {
     wx.navigateTo({
-      url: '../search/search'
+      url: '../p_search/p_search'
     })
   },
   onShow: function () {
