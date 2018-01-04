@@ -1,3 +1,5 @@
+@import "../p_search/p_search.wxss";
+
 .p_search-body{ 
 }
 .p_search-box{
@@ -13,7 +15,7 @@
 .p_search-post{
   flex: 1;
 }
-.p_search-post .title{
+.p_search-post .title2{
   border-radius: 5rpx;
   background: red;
   color: #fff;

@@ -1,4 +1,5 @@
 var API_URL = 'https://luccake.top/api/v1/products?utf8=%E2%9C%93&q%5Btitle_or_description_cont%5D='
+
 Page({
   data: {
     cakes: [],

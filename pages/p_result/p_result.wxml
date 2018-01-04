@@ -1,9 +1,22 @@
+<view class="search">
+  <view class="searchBg">
+    <view>
+      <image src="/images/icon/search-1.jpg" style="width:20px;height:21px;"></image>
+    </view>
+    <view>
+      <input type="text" placeholder="搜索京东商品" placeholder-class="holder" bindblur="search2" id="search" value="{{name}}" />
+    </view>
+  </view>
+  <view class="btn" bindtap="resetSearch">取消</view>
+</view>
+<view class="hr"></view>
+
 <scroll-view class='p_search-body' scroll-y>
   <navigator url='../p_goods/p_goods' wx:for="{{cakes}}" wx:key="">
     <view class='p_search-box'>
       <image src="{{item.photos[0].avatar.url}}"></image>
       <view class='p_search-post'>
-        <text class='title'>{{item.title}}</text>
+        <text class='title2'>{{item.title}}</text>
         <text class='description'>{{item.description}}</text>
         <text class='price'>¥ {{item.price}}</text>
       </view>
