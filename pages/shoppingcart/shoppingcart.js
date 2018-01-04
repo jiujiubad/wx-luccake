@@ -1,66 +1,79 @@
-// pages/shoppingcart/shoppingcart.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    goods: [],
+    selected: true,
+    selectedAll: true,
+    totalPrice: 0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad: function () {
+    this.loadGoods();
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  loadGoods: function () {
+    var goods = wx.getStorageSync("goods");
+    var totalPrice = 0;
+    for (var i = 0; i < goods.length; i++) {
+      var good = goods[i];
+      totalPrice += good.price * good.count;
+    }
+    this.setData({ goods: goods, totalPrice: totalPrice });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  checkboxChange: function (e) {
+    var ids = e.detail.value;
+    if (ids.length == 0) {
+      this.setData({ selectedAll: false, totalPrice: 0 });
+    } else {
+      var goods = wx.getStorageSync("goods");
+      var totalPrice = 0;
+      for (var i = 0; i < goods.length; i++) {
+        var good = goods[i];
+        for (var j = 0; j < ids.length; j++) {
+          if (good.id == ids[j]) {
+            totalPrice += good.price * good.count;
+          }
+        }
+      }
+      this.setData({ selectedAll: true, totalPrice: totalPrice });
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  checkAll: function (e) {
+    var selected = this.data.selected;
+    var result = selected == true ? false : true;
+    this.setData({ selected: result });
+    if (result == false) {
+      this.setData({ totalPrice: 0 });
+    } else {
+      this.loadGoods();
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+  addGoods: function (e) {
+    var id = e.currentTarget.id;
+    var goods = wx.getStorageSync("goods");
+    var addGoods = new Array();
+    for (var i = 0; i < goods.length; i++) {
+      var good = goods[i];
+      if (good.id == id) {
+        good.count = good.count + 1;
+      }
+      addGoods.push(good);
+    }
+    wx.setStorageSync("goods", addGoods);
+    this.loadGoods();
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  minusGoods: function (e) {
+    var id = e.currentTarget.id;
+    var goods = wx.getStorageSync("goods");
+    var addGoods = new Array();
+    for (var i = 0; i < goods.length; i++) {
+      var good = goods[i];
+      if (good.id == id) {
+        var count = good.count;
+        if (count >= 2) {
+          good.count = good.count - 1;
+        }
+      }
+      addGoods.push(good);
+    }
+    wx.setStorageSync("goods", addGoods);
+    this.loadGoods();
   }
 })
