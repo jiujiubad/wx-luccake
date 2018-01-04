@@ -6,7 +6,8 @@
     "pages/p_search/p_search",
     "pages/shoppingcart/shoppingcart",
     "pages/order/order",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/coupon/coupon"
   ],
   "window":{
     "backgroundTextStyle":"light",
