@@ -4,13 +4,21 @@
       <image src="/images/icon/search-1.jpg" style="width:20px;height:21px;"></image>
     </view>
     <view>
-      <input type="text" placeholder="搜索京东商品" placeholder-class="holder" bindblur="search2" id="search" value="{{name}}" />
+      <input type="text" placeholder="搜索京东商品" placeholder-class="holder" bindblur="search" id="search" value="{{name}}" />
     </view>
   </view>
   <view class="btn" bindtap="resetSearch">取消</view>
 </view>
 <view class="hr"></view>
 
+<view class='tab'>
+  <view class="{{currentTab==0?'select':'default'}}" data-id="0" bindtap='switchAll'>所有</view>
+  <view class="{{currentTab==1?'select':'default'}}" data-id="1" bindtap='switchPrice'>价格</view>
+  <view class="{{currentTab==2?'select':'default'}}" data-id="2" bindtap='switchTime'>时间</view>
+  <view class="{{currentTab==3?'select':'default'}}" data-id="3" bindtap='switchTest'>筛选</view>
+</view>
+
+<view class="hr"></view>
 <scroll-view class='p_search-body' scroll-y>
   <navigator url='../p_goods/p_goods' wx:for="{{cakes}}" wx:key="">
     <view class='p_search-box'>

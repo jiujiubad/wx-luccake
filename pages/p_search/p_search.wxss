@@ -54,6 +54,9 @@
 }
 .tips{
   padding:10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .tip{
   background-color: #E8E8ED;
@@ -65,11 +68,9 @@
   text-align: center;
   font-size: 13px;
   margin-right: 10px;
-  float: left;
   margin-bottom: 10px;
 }
 .item{
-  clear: both;
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
@@ -80,3 +81,45 @@
   margin-bottom: 10px;
 }
 
+
+.p_search-box{
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 2rpx solid #eee;
+}
+.p_search-box image{
+  width: 250rpx;
+  height: 250rpx;
+  margin-right: 20rpx;
+}
+.p_search-post{
+  flex: 1;
+}
+.p_search-post .title2{
+  border-radius: 5rpx;
+  background: red;
+  color: #fff;
+  font-size: 25rpx;
+  padding: 0 10rpx;
+  margin-right: 20rpx;
+}
+.p_search-post .price{
+  display: block;
+  margin-top: 40rpx;
+  color: red;
+}
+
+.tab{
+  clear: both;
+  display: flex;
+  flex-direction: row;
+}
+.tab view{
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  padding: 0 10rpx;
+}
+.select{
+  border-bottom: 2rpx solid red;
+}

@@ -1,7 +1,4 @@
 @import "../p_search/p_search.wxss";
-
-.p_search-body{ 
-}
 .p_search-box{
   display: flex;
   padding: 20rpx;
@@ -27,4 +24,18 @@
   display: block;
   margin-top: 40rpx;
   color: red;
+}
+
+.tab{
+  display: flex;
+  flex-direction: row;
+}
+.tab view{
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  padding: 0 10rpx;
+}
+.select{
+  border-bottom: 2rpx solid red;
 }
