@@ -4,14 +4,14 @@
       <image src="/images/icon/search-1.jpg" style="width:20px;height:21px;"></image>
     </view>
     <view>
-      <input type="text" placeholder="搜索京东商品" placeholder-class="holder" bindblur="searchTitle" id="search" value="{{name}}" />
+      <input type="text" placeholder="搜索 99cake 商品" placeholder-class="holder" bindblur="searchTitle" id="search" value="{{name}}" />
     </view>
   </view>
   <view class="btn" bindtap="resetSearch">取消</view>
 </view>
 <view class="hr"></view>
 
-<block wx:if="{{result.length > 0}}">
+<block wx:if="{{result.length > 0}}"><!--如果能匹配到的搜索标题，显示系统推荐标题-->
   <block wx:for="{{result}}">
     <view class="item">
       <view class="name" bindtap="clickTitle" data-title="{{item}}">{{item}}</view>
@@ -20,7 +20,7 @@
   </block>
 </block>
 <block wx:else>
-  <block wx:if="{{cakes != ''}}">
+  <block wx:if="{{cakes != ''}}"><!--当有拿到商品数据cakes时（可以是输入/点击搜索记录/点击热门搜索），显示商品-->
     <view class='tab'>
       <view class="{{currentTab==0?'select':'default'}}" data-id="0" bindtap='switchAll'>所有</view>
       <view class="{{currentTab==1?'select':'default'}}" data-id="1" bindtap='switchPrice'>价格</view>
@@ -41,7 +41,7 @@
       </navigator>
     </scroll-view>
   </block>
-  <block wx:else>
+  <block wx:else><!--如果没有商品数据，则显示初始的搜索页面，即搜索框+历史搜索+热门搜索-->
     <view class="hotSearch">
       <view class="title">
         <view class="left">历史搜索</view>
