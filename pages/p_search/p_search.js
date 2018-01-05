@@ -47,6 +47,7 @@ Page({
         that.setData({
           cakes: res.data.data,
           name: name,
+          word: ''
         })
       }
     })
@@ -72,10 +73,9 @@ Page({
       titles.push(title);
     }
     this.setData({ titles: titles })
-    console.log('test', titles)
     return titles
-  }, 
-  searchTitles: function (e) {
+  },
+  searchTitle: function (e) {
     var name = e.detail.value;
     var titles = this.loadTitles();
     var result = [];
@@ -113,6 +113,35 @@ Page({
         }
       })
     }
+  },
+  clickTitle:function(e){
+    console.log(e)
+    var name = e.currentTarget.dataset.title
+    console.log(e.currentTarget.dataset.title)
+    if (!name) {
+      return;
+    }
+    wx.showToast({ //加载中的动画效果
+      title: "加载中..",
+      icon: "loading",
+      duration: 10000
+    });
+    var that = this; //保存this的数据
+    var utf = encodeURI(name)
+    wx.request({
+      url: API_URL + utf + "&commit=Search",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        wx.hideToast();
+        that.setData({
+          cakes: res.data.data,
+          name: name,
+          result: ''
+        })
+      }
+    })
   },
   resetSearch: function () {
     var result = [];
