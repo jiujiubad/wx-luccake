@@ -18,9 +18,8 @@ Page({
       searchData: searchData,
     })
   },
-  loadTips:function(e){
+  loadTips:function(e){ //加载“热门搜索”
     var that = this;
-    var word = [];
     wx.request({
       url: 'https://luccake.top/api/v1/products',
       header: {
@@ -38,7 +37,7 @@ Page({
     }
     this.setData({out: out})
   },
-  clickTip:function(e){
+  clickTip:function(e){ //点击”热门搜索“
     var name = e.currentTarget.dataset.title
     if (!name) {
       return;
@@ -63,12 +62,11 @@ Page({
         that.setData({
           cakes: res.data.data,
           name: name,
-          word: '' //小技巧，word清空，意味着wxml不会显示wx:for的数据。
         })
       }
     })
   },
-  clickSearchData:function(e){
+  clickSearchData:function(e){ //点击“历史搜索”
     var name = e.currentTarget.dataset.title //通过console.log获得e的散列，展开得到tilte的写法
     if (!name) {
       return;
@@ -93,12 +91,17 @@ Page({
         that.setData({
           cakes: res.data.data,
           name: name,
-          word: '' //小技巧，清空，意味着wxml不会显示wx:for的数据。
         })
       }
     })
   },
-  loadTitles:function(e){
+  clearSearchData:function(e){ //清除“历史搜索”
+    var searchData = wx.getStorageSync('searchData')
+    wx.setStorageSync('searchData', '') //把数组设置为空，完成”清除历史搜索“功能
+    this.setData({searchData: []})
+    console.log(searchData)
+  },
+  loadTitles:function(e){ //加载“输入关键字词库”
     var that = this; //保存this的数据
     wx.request({
       url: 'https://luccake.top/api/v1/products',
@@ -121,7 +124,7 @@ Page({
     this.setData({ titles: titles })
     return titles
   },
-  searchTitle: function (e) {
+  searchTitle: function (e) { //按输入关键词搜索
     var name = e.detail.value;
     var titles = this.loadTitles();
     var result = [];
@@ -163,7 +166,7 @@ Page({
       })
     }
   },
-  clickTitle:function(e){
+  clickTitle:function(e){ //点击下拉关键词
     var name = e.currentTarget.dataset.title
     if (!name) {
       return;
@@ -193,7 +196,7 @@ Page({
       }
     })
   },
-  resetSearch: function () {
+  resetSearch: function () { //清空下拉关键词及输入的关键字
     var result = [];
     this.setData({ result: result, name: '' }); //清空匹配输入值，清空输入值
   },

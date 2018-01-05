@@ -43,16 +43,19 @@
   </block>
   <block wx:else><!--如果没有商品数据，则显示初始的搜索页面，即搜索框+历史搜索+热门搜索-->
     <view class="hotSearch">
-      <view class="title">
-        <view class="left">历史搜索</view>
-      </view>
-      <view class='tips'>
-        <view wx:for="{{searchData}}">
-          <view class='tip' wx:if="{{index<10}}" bindtap='clickSearchData' data-id="{{item.id}}" data-title="{{item}}">
-            {{item}}
+      <block wx:if="{{searchData != ''}}">
+        <view class="title">
+          <view class="left">历史搜索</view>
+          <view class="right" bindtap="clearSearchData">清除</view>
+        </view>
+        <view class='tips'>
+          <view wx:for="{{searchData}}">
+            <view class='tip' wx:if="{{index<10}}" bindtap='clickSearchData' data-id="{{item.id}}" data-title="{{item}}">
+              {{item}}
+            </view>
           </view>
         </view>
-      </view>
+      </block>
       <view class="title">
         <view class="left">热门搜索</view>
         <view class="right" bindtap="loadTips">换一批</view>
