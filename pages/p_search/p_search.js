@@ -5,10 +5,12 @@ var API_com2 = '&utf8=%E2%9C%93'
 
 Page({
   data: {
-    cakes: [],
-    result: [],
-    name: '',
-    currentTab: 0,
+    cakes: [], //商品
+    result: [], //匹配输入内容
+    name: '', //输入内容
+    currentTab: 0, //搜索结果下标
+    searchData: [], //历史搜索
+    out: [], //热门搜索
   },
   onLoad:function(){
     this.loadTips();  //加载“热门搜索”函数
@@ -165,6 +167,9 @@ Page({
         }
       })
     }
+  },
+  clearName:function(e){ //清除输入框内容
+    this.setData({name:'',result:'',cakes:''}) //把数组设置为空，完成”清空输入框“功能
   },
   clickTitle:function(e){ //点击下拉关键词
     var name = e.currentTarget.dataset.title

@@ -1,11 +1,16 @@
 <view class="search">
   <view class="searchBg">
-    <view>
-      <image src="/images/icon/search-1.jpg" style="width:20px;height:21px;"></image>
+    <view class="icon-s">
+      <icon type="search" size="17"/>
     </view>
     <view>
-      <input type="text" placeholder="搜索 99cake 商品" placeholder-class="holder" bindblur="searchTitle" id="search" value="{{name}}" />
+      <input type="text" placeholder="搜索 99cake 商品" placeholder-class="holder" placeholder-style="color:#ccc;margin-left:5px;" bindblur="searchTitle" id="search" value="{{name}}" />
     </view>
+    <block wx:if="{{result.length > 0}}">
+    <view class="icon-c">
+      <icon type="clear" size="17" color="#bbb" bindtap="clearName"/>
+    </view>
+    </block>
   </view>
   <view class="btn" bindtap="resetSearch">取消</view>
 </view>
