@@ -12,6 +12,12 @@ Page({
   },
   onLoad:function(){
     this.loadTips();
+    var searchData = wx.getStorageSync('searchData');
+    searchData.reverse()
+    this.setData({
+      searchData: searchData,
+    })
+    console.log('sea',searchData)
   },
   loadTips:function(e){
     var that = this;
@@ -22,7 +28,6 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        console.log(res.data)
         that.setData({
           word: res.data.data
         })
@@ -34,6 +39,42 @@ Page({
     if (!name) {
       return;
     }
+    var searchData = wx.getStorageSync('searchData') || []
+    searchData.push(name)
+    wx.setStorageSync('searchData', searchData)
+    console.log('ffff',searchData)
+    wx.showToast({ //加载中的动画效果
+      title: "加载中..",
+      icon: "loading",
+      duration: 10000
+    });
+    var that = this; //保存this的数据
+    var utf = encodeURI(name)
+    wx.request({
+      url: API_URL + utf + "&commit=Search",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        wx.hideToast();
+        that.setData({
+          cakes: res.data.data,
+          name: name,
+          word: ''
+        })
+      }
+    })
+  },
+  clickSearchData:function(e){
+    console.log(e)
+    var name = e.currentTarget.dataset.title
+    if (!name) {
+      return;
+    }
+    var searchData = wx.getStorageSync('searchData') || []
+    searchData.push(name)
+    wx.setStorageSync('searchData', searchData)
+    console.log('ffff',searchData)
     wx.showToast({ //加载中的动画效果
       title: "加载中..",
       icon: "loading",
@@ -91,6 +132,10 @@ Page({
         }
       }
       this.setData({ result: result });
+      var searchData = wx.getStorageSync('searchData') || []
+      searchData.push(name)
+      wx.setStorageSync('searchData', searchData)
+      console.log('dad',searchData)
     }
     if (result == ''){
       if (!name) {
@@ -125,6 +170,9 @@ Page({
     if (!name) {
       return;
     }
+    var searchData = wx.getStorageSync('searchData') || []
+    searchData.push(name)
+    wx.setStorageSync('searchData', searchData)
     wx.showToast({ //加载中的动画效果
       title: "加载中..",
       icon: "loading",
@@ -151,6 +199,11 @@ Page({
     var result = [];
     this.setData({ result: result, name: '' });
   },
+
+
+
+
+
 
   switchAll: function (e) {
     var inputValue = this.data.name
