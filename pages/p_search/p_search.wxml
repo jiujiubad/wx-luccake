@@ -44,7 +44,7 @@
   <block wx:else>
     <view class="hotSearch">
       <view class="title">
-        <view class="left">热门搜索</view>
+        <view class="left">历史搜索</view>
       </view>
       <view class='tips'>
         <view wx:for="{{searchData}}">
@@ -55,11 +55,11 @@
       </view>
       <view class="title">
         <view class="left">热门搜索</view>
-        <view class="right">换一批</view>
+        <view class="right" bindtap="loadTips">换一批</view>
       </view>
       <view class="tips">
-        <view wx:for="{{word}}" bindtap='clickTip' data-id="{{item.id}}" data-title="{{item.title}}">
-          <view wx:if='{{index<10}}' class="tip" >
+        <view wx:for="{{out}}" bindtap='clickTip' data-id="{{item.id}}" data-title="{{item.title}}">
+          <view class="tip" >
             {{item.title}}
           </view>
         </view>

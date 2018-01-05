@@ -28,11 +28,17 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        that.setData({
-          word: res.data.data
-        })
+        wx.setStorageSync('word',res.data.data)
       }
     })
+    var word = wx.getStorageSync('word');
+    var out = [];
+    for(var i=0; i<10; i++){
+      var temp = (Math.random()*word.length)>>0;
+      out.push(word[temp]);
+    }
+    this.setData({out: out})
+    console.log('cccfd',out)
   },
   clickTip:function(e){
     var name = e.currentTarget.dataset.title
