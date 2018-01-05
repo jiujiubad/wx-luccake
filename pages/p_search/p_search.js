@@ -44,7 +44,7 @@ Page({
       },
       success: function (res) {
         wx.hideToast();
-        that.setData({          
+        that.setData({
           cakes: res.data.data,
           name: name,
         })
@@ -61,7 +61,7 @@ Page({
       success: function (res) {
         that.setData({
           goods: res.data.data,
-        }) 
+        })
         wx.setStorageSync('e',res.data.data)
       }
     })
@@ -73,8 +73,8 @@ Page({
     }
     this.setData({ titles: titles })
     console.log('test', titles)
-    return titles 
-  },
+    return titles
+  }, 
   searchTitles: function (e) {
     var name = e.detail.value;
     var titles = this.loadTitles();
