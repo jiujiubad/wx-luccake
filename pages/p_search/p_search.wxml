@@ -4,7 +4,7 @@
       <icon type="search" size="17"/>
     </view>
     <view>
-      <input type="text" placeholder="搜索 99cake 商品" placeholder-class="holder" placeholder-style="color:#ccc;margin-left:5px;" bindblur="searchTitle" id="search" value="{{name}}" />
+      <input type="text" placeholder="搜索 99cake 商品" placeholder-class="holder" placeholder-style="color:#ccc;margin-left:5px;" bindinput="dropdown" bindconfirm="searchTitle" id="search" value="{{name}}" />
     </view>
     <block wx:if="{{result.length > 0}}">
     <view class="icon-c">

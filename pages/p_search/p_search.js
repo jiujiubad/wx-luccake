@@ -14,8 +14,7 @@ Page({
   },
   onLoad:function(){
     this.loadTips();  //加载“热门搜索”函数
-    var searchData = wx.getStorageSync('searchData'); //获取缓存里的”历史搜索”数组，分别在clickTip、clickTitle、clickSearchData、searchTitle的函数里设置wx.setStorageSync
-    searchData.reverse()  //数组顺序颠倒（反转）
+    var searchData = wx.getStorageSync('searchData')||[]; //获取缓存里的”历史搜索”数组，分别在clickTip、clickTitle、clickSearchData、searchTitle的函数里设置wx.setStorageSync
     this.setData({
       searchData: searchData,
     })
@@ -46,6 +45,7 @@ Page({
     }
     var searchData = wx.getStorageSync('searchData') || []
     searchData.push(name)
+    searchData.reverse()
     wx.setStorageSync('searchData', searchData)
     wx.showToast({ //显示”加载中“”的动画效果
       title: "加载中..",
@@ -75,6 +75,7 @@ Page({
     }
     var searchData = wx.getStorageSync('searchData') || []
     searchData.push(name)
+    searchData.reverse()
     wx.setStorageSync('searchData', searchData)
     wx.showToast({ //加载中的动画效果
       title: "加载中..",
@@ -126,26 +127,38 @@ Page({
     this.setData({ titles: titles })
     return titles
   },
-  searchTitle: function (e) { //按输入关键词搜索
+  dropdown: function (e) { //按输入关键词搜索
     var name = e.detail.value;
-    var titles = this.loadTitles();
-    var result = [];
-    if (name != '') {
-      for (var i = 0; i < titles.length; i++) {
-        var good = titles[i];
-        if (good.indexOf(name) > -1) {  //js的indexOf()方法，看输入值name是否在标题库title中，-1表示检索的字符串值没有出现，0表示匹配且从第0个字符就匹配。
-          result.push(good);
+    if(name==''){//如果name为空
+      console.log('没有输入，返回。')
+    }else{//如果name不为空
+      var titles = this.loadTitles();
+      var result = [];
+      if (name != '') {
+        for (var i = 0; i < titles.length; i++) {
+          var good = titles[i];
+          if (good.indexOf(name) > -1) {  //js的indexOf()方法，看输入值name是否在标题库title中，-1表示检索的字符串值没有出现，0表示匹配且从第0个字符就匹配。
+            result.push(good);
+          }
         }
       }
-      this.setData({ result: result });
+      if(result!=''){//如果有匹配
+        this.setData({result:result});
+        console.log('匹配，显示匹配词')
+      }else{//如果没有匹配
+        console.log('没有匹配，返回。')
+      }
+    }
+  },
+  searchTitle:function(e){
+    var name = e.detail.value;
+    if(name==''){
+      console.log('搜索无输入，显示推荐商品')
+    }else{
       var searchData = wx.getStorageSync('searchData') || [] //以下三行缓存，同上几个click函数
       searchData.push(name)
+      searchData.reverse() //数组顺序颠倒（反转）
       wx.setStorageSync('searchData', searchData)
-    }
-    if (result == ''){
-      if (!name) {
-        return;
-      }
       wx.showToast({ //加载中的动画效果
         title: "加载中..",
         icon: "loading",
@@ -162,10 +175,12 @@ Page({
           wx.hideToast();
           that.setData({
             cakes: res.data.data,
-            name: name
+            result: '',
+            searchData: searchData
           })
         }
       })
+      console.log('不管是否有搜索结果，显示推荐商品')
     }
   },
   clearName:function(e){ //清除输入框内容
@@ -178,6 +193,7 @@ Page({
     }
     var searchData = wx.getStorageSync('searchData') || []  //缓存输入值，同上几个click函数
     searchData.push(name)
+    searchData.reverse()
     wx.setStorageSync('searchData', searchData)
     wx.showToast({ //加载中的动画效果
       title: "加载中..",
