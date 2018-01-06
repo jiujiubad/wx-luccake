@@ -11,14 +11,13 @@ Page({
     currentTab: 0, //搜索结果下标
     searchData: [], //历史搜索
     out: [], //热门搜索
-    has_input: '', //判断是否隐藏✘按钮
+    dynamic_name: '', //输入框动态内容
   },
   onLoad:function(){
     this.loadTips();  //加载“热门搜索”函数
     var searchData = wx.getStorageSync('searchData')||[]; //获取缓存里的”历史搜索”数组，分别在clickTip、clickTitle、clickSearchData、searchTitle的函数里设置wx.setStorageSync
     this.setData({
       searchData: searchData,
-      has_input: ''
     })
   },
   loadTips:function(e){ //加载“热门搜索”
@@ -65,8 +64,7 @@ Page({
         wx.hideToast(); //隐藏”加载中“”的动画效果
         that.setData({
           cakes: res.data.data,
-          name: name,
-          has_input: ''
+          name: name
         })
       }
     })
@@ -96,8 +94,7 @@ Page({
         wx.hideToast();
         that.setData({
           cakes: res.data.data,
-          name: name,
-          has_input: ''
+          name: name
         })
       }
     })
@@ -133,9 +130,12 @@ Page({
   },
   dropdown: function (e) { //动态匹配输入
     var name = e.detail.value;
+    var dynamic_name = name;
+    this.setData({dynamic_name:dynamic_name}) //输入框输入值，由初始值改为动态新值
+    var dynamic_e = e
+    wx.setStorageSync('dynamic_e',dynamic_e) //对动态输入的值所在对象(散列)，保存到缓存
     if(name==''){//如果name为空
       console.log('没有输入，返回。')
-      this.setData({has_input:''})
     }else{//如果name不为空
       var titles = this.loadTitles();
       var result = [];
@@ -147,7 +147,6 @@ Page({
           }
         }
       }
-      this.setData({has_input:'1'})
       if(result!=''){//如果有匹配
         this.setData({result:result});
         console.log('匹配，显示匹配词')
@@ -192,12 +191,17 @@ Page({
   hideIcon:function(e){
     var name = e.detail.value;
     console.log(e)
-    if(name != ''){
-      this.setData({has_input:'1'})
-    }
+  },
+  searchBtn:function(e){
+    var e = wx.getStorageSync('dynamic_e')
+    console.log('dynamic_e',e)
+    this.searchTitle(e)
+  },
+  backBtn:function(e){
+    console.log()
   },
   clearName:function(e){ //清除输入框内容
-    this.setData({name:'',result:'',cakes:''}) //把数组设置为空，完成”清空输入框“功能
+    this.setData({name:'',cakes:'',dynamic_name:''}) //把数组设置为空，完成”清空输入框“功能
   },
   clickTitle:function(e){ //点击下拉关键词
     var name = e.currentTarget.dataset.title
@@ -230,10 +234,7 @@ Page({
       }
     })
   },
-  resetSearch: function () { //清空下拉关键词及输入的关键字
-    var result = [];
-    this.setData({ result: result, name: '' }); //清空匹配输入值，清空输入值
-  },
+
 
 
 

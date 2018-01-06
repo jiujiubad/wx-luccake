@@ -6,17 +6,17 @@
     <view>
       <input type="text" placeholder="搜索 99cake 商品" placeholder-class="holder" placeholder-style="color:#ccc;margin-left:5px;" bindinput="dropdown" bindconfirm="searchTitle" bindfocus="hideIcon" id="search" value="{{name}}" ></input>
     </view>
-    <block wx:if="{{has_input != ''}}">
+    <block wx:if="{{dynamic_name != ''}}">
       <view class="icon-c">
         <icon type="clear" size="17" color="#bbb" bindtap="clearName"/>
       </view>
     </block>
   </view>
-  <block wx:if="{{has_input != ''}}">
-    <view class="btn1 btn2" bindtap="searchTitle" data-name="{{name}}">搜索</view>
+  <block wx:if="{{dynamic_name != ''}}">
+    <view class="btn1 btn2" bindtap="searchBtn">搜索</view>
   </block>
   <block wx:else>
-    <view class="btn1" bindtap="resetSearch">取消</view>
+    <view class="btn1" bindtap="backBtn">取消</view>
   </block>
 </view>
 <view class="hr"></view>
