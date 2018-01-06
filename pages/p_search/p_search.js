@@ -64,7 +64,8 @@ Page({
         wx.hideToast(); //隐藏”加载中“”的动画效果
         that.setData({
           cakes: res.data.data,
-          name: name
+          name: name,
+          searchData: searchData
         })
       }
     })
@@ -94,7 +95,8 @@ Page({
         wx.hideToast();
         that.setData({
           cakes: res.data.data,
-          name: name
+          name: name,
+          searchData: searchData
         })
       }
     })
@@ -135,6 +137,7 @@ Page({
     var dynamic_e = e
     wx.setStorageSync('dynamic_e',dynamic_e) //对动态输入的值所在对象(散列)，保存到缓存
     if(name==''){//如果name为空
+      this.setData({result:''})
       console.log('没有输入，返回。')
     }else{//如果name不为空
       var titles = this.loadTitles();
@@ -188,9 +191,8 @@ Page({
       console.log('不管是否有搜索结果，显示推荐商品')
     }
   },
-  hideIcon:function(e){
-    var name = e.detail.value;
-    console.log(e)
+  showIcon:function(e){
+    this.setData({dynamic_name:1})
   },
   searchBtn:function(e){
     var e = wx.getStorageSync('dynamic_e')
@@ -198,10 +200,10 @@ Page({
     this.searchTitle(e)
   },
   backBtn:function(e){
-    console.log()
+    this.setData({name:'',result:'',cakes:''})
   },
   clearName:function(e){ //清除输入框内容
-    this.setData({name:'',cakes:'',dynamic_name:''}) //把数组设置为空，完成”清空输入框“功能
+    this.setData({name:'',result:'',cakes:'',dynamic_name:''}) //把数组设置为空，完成”清空输入框“功能
   },
   clickTitle:function(e){ //点击下拉关键词
     var name = e.currentTarget.dataset.title
@@ -229,6 +231,7 @@ Page({
         that.setData({
           cakes: res.data.data,
           name: name,
+          searchData: searchData,
           result: '' //小技巧，清空，意味着wxml不会显示wx:for的数据。
         })
       }

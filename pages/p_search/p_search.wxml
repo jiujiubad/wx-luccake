@@ -4,7 +4,7 @@
       <icon type="search" size="17"/>
     </view>
     <view>
-      <input type="text" placeholder="搜索 99cake 商品" placeholder-class="holder" placeholder-style="color:#ccc;margin-left:5px;" bindinput="dropdown" bindconfirm="searchTitle" bindfocus="hideIcon" id="search" value="{{name}}" ></input>
+      <input type="text" placeholder="搜索 99cake 商品" placeholder-class="holder" placeholder-style="color:#ccc;margin-left:5px;" bindinput="dropdown" bindconfirm="searchTitle" bindfocus="showIcon" id="search" value="{{name}}" ></input>
     </view>
     <block wx:if="{{dynamic_name != ''}}">
       <view class="icon-c">
@@ -16,7 +16,7 @@
     <view class="btn1 btn2" bindtap="searchBtn">搜索</view>
   </block>
   <block wx:else>
-    <view class="btn1" bindtap="backBtn">取消</view>
+    <view class="btn1" bindtap="backBtn">返回</view>
   </block>
 </view>
 <view class="hr"></view>
