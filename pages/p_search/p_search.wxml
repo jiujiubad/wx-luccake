@@ -4,12 +4,12 @@
       <icon type="search" size="17"/>
     </view>
     <view>
-      <input type="text" placeholder="搜索 99cake 商品" placeholder-class="holder" placeholder-style="color:#ccc;margin-left:5px;" bindinput="dropdown" bindconfirm="searchTitle" id="search" value="{{name}}" />
+      <input type="text" placeholder="搜索 99cake 商品" placeholder-class="holder" placeholder-style="color:#ccc;margin-left:5px;" bindinput="dropdown" bindconfirm="searchTitle" bindfocus="hideIcon" id="search" value="{{name}}" ></input>
     </view>
-    <block wx:if="{{result.length > 0}}">
-    <view class="icon-c">
-      <icon type="clear" size="17" color="#bbb" bindtap="clearName"/>
-    </view>
+    <block wx:if="{{has_input != ''}}">
+      <view class="icon-c">
+        <icon type="clear" size="17" color="#bbb" bindtap="clearName"/>
+      </view>
     </block>
   </view>
   <view class="btn" bindtap="resetSearch">取消</view>

@@ -11,12 +11,14 @@ Page({
     currentTab: 0, //搜索结果下标
     searchData: [], //历史搜索
     out: [], //热门搜索
+    has_input: '', //判断是否隐藏✘按钮
   },
   onLoad:function(){
     this.loadTips();  //加载“热门搜索”函数
     var searchData = wx.getStorageSync('searchData')||[]; //获取缓存里的”历史搜索”数组，分别在clickTip、clickTitle、clickSearchData、searchTitle的函数里设置wx.setStorageSync
     this.setData({
       searchData: searchData,
+      has_input: ''
     })
   },
   loadTips:function(e){ //加载“热门搜索”
@@ -64,6 +66,7 @@ Page({
         that.setData({
           cakes: res.data.data,
           name: name,
+          has_input: ''
         })
       }
     })
@@ -94,6 +97,7 @@ Page({
         that.setData({
           cakes: res.data.data,
           name: name,
+          has_input: ''
         })
       }
     })
@@ -127,10 +131,11 @@ Page({
     this.setData({ titles: titles })
     return titles
   },
-  dropdown: function (e) { //按输入关键词搜索
+  dropdown: function (e) { //动态匹配输入
     var name = e.detail.value;
     if(name==''){//如果name为空
       console.log('没有输入，返回。')
+      this.setData({has_input:''})
     }else{//如果name不为空
       var titles = this.loadTitles();
       var result = [];
@@ -142,6 +147,7 @@ Page({
           }
         }
       }
+      this.setData({has_input:'1'})
       if(result!=''){//如果有匹配
         this.setData({result:result});
         console.log('匹配，显示匹配词')
@@ -181,6 +187,13 @@ Page({
         }
       })
       console.log('不管是否有搜索结果，显示推荐商品')
+    }
+  },
+  hideIcon:function(e){
+    var name = e.detail.value;
+    console.log(e)
+    if(name != ''){
+      this.setData({has_input:'1'})
     }
   },
   clearName:function(e){ //清除输入框内容
