@@ -12,7 +12,12 @@
       </view>
     </block>
   </view>
-  <view class="btn" bindtap="resetSearch">取消</view>
+  <block wx:if="{{has_input != ''}}">
+    <view class="btn1 btn2" bindtap="searchTitle" data-name="{{name}}">搜索</view>
+  </block>
+  <block wx:else>
+    <view class="btn1" bindtap="resetSearch">取消</view>
+  </block>
 </view>
 <view class="hr"></view>
 

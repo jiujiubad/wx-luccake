@@ -44,7 +44,7 @@
 .holder{
   font-size: 13px;
 }
-.btn{
+.btn1{
   font-size: 14px;
   line-height: 30px;
   margin-left: 10px;
@@ -54,6 +54,11 @@
   background-color: #F7F7F7;
   border-radius: 3px;
   color: #666;
+}
+.btn2{
+  background-color: red;
+  border-color: red;
+  color: #fff;
 }
 .hr{
   border:1px solid #cccccc;
