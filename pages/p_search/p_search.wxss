@@ -108,56 +108,67 @@
   margin-bottom: 10px;
 }
 
-.body1{
+.box1{
   display: flex;
   padding: 20rpx;
   border-bottom: 2rpx solid #eee;
 }
-.body1 image{
+.box1 image{
   width: 250rpx;
   height: 250rpx;
   margin-right: 20rpx;
 }
-.body1 .box1{
+.box1 .tap1{
   flex: 1;
 }
-.body1 .title{
+.box1 .t1{
   border-radius: 5rpx;
-  background: red;
+  background: #EE2E34;
   color: #fff;
   font-size: 25rpx;
-  padding: 0 10rpx;
-  margin-right: 10rpx;
+  padding: 0 5rpx;
+  margin-right: 20rpx;
   float:left;
+  height: 34rpx;
+  line-height: 34rpx;
 }
-.body1 .price{
+.box1 .t3{
   display: block;
   margin-top: 40rpx;
   color: red;
 }
-.big2{
+.boxs-2{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  padding:1%;
 }
-.body2{
-  width:45%; /*非常重要的值，没有就不会显示两列*/
-  margin-top:1%;
-  text-align:center;
-  border: 1rpx solid #e8e8e8;
+.box2{
+  width:49%; /*非常重要的值，没有就不会显示两列*/
+  margin-bottom: 1%;
+  border: 1rpx solid #e9e9e9;
 }
-.body2 image{
+.box2 image{
   width:100%;
   height: 330rpx;
 }
-.body2 .box2{
+.box2 .tap2{
+  padding: 10px;
 }
-.body2 .title{
-
+.box2 .t1{
+  border-radius: 5rpx;
+  background: #EE2E34;
+  color: #fff;
+  font-size: 25rpx;
+  padding: 0 5rpx;
+  margin-right: 20rpx;
+  float:left;
+  height: 34rpx;
+  line-height: 34rpx;
 }
-.body2 .price{
-
+.box2 .t3{
+  display: block;
+  margin-top: 20rpx;
+  color: red;
 }
 
 .tab{
@@ -173,4 +184,9 @@
 }
 .select{
   border-bottom: 2rpx solid red;
+}
+.row1 image{
+  width: 25px;
+  height: 25px;
+  margin-top: 8px;
 }
