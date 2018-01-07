@@ -12,6 +12,7 @@ Page({
     searchData: [], //历史搜索
     out: [], //热门搜索
     dynamic_name: '', //输入框动态内容
+    box: true, //商品单排或双排显示
   },
   onLoad:function(){
     this.loadTips();  //加载“热门搜索”函数
@@ -304,24 +305,8 @@ Page({
       }
     })
   },
-  switchTest:function(e){ //排序-测试
-    var inputValue = this.data.name
-    if (!inputValue) {
-      return;
-    }
-    var that = this; //保存this的数据
-    var utf = encodeURI(inputValue)
-    wx.request({
-      url: API_URL2 + 'quantity+desc' + API_com1 + utf + API_com2,
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        that.setData({
-          cakes: res.data.data,
-          currentTab: 3
-        })
-      }
-    })
+  boxChange:function(e){ //商品单排或双排显示
+    var box = this.data.box
+    this.setData({box: !box})
   }
 })

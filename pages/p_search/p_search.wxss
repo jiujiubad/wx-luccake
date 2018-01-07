@@ -108,32 +108,56 @@
   margin-bottom: 10px;
 }
 
-
-.p_search-box{
+.body1{
   display: flex;
   padding: 20rpx;
   border-bottom: 2rpx solid #eee;
 }
-.p_search-box image{
+.body1 image{
   width: 250rpx;
   height: 250rpx;
   margin-right: 20rpx;
 }
-.p_search-post{
+.body1 .box1{
   flex: 1;
 }
-.p_search-post .title2{
+.body1 .title{
   border-radius: 5rpx;
   background: red;
   color: #fff;
   font-size: 25rpx;
   padding: 0 10rpx;
-  margin-right: 20rpx;
+  margin-right: 10rpx;
+  float:left;
 }
-.p_search-post .price{
+.body1 .price{
   display: block;
   margin-top: 40rpx;
   color: red;
+}
+.big2{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding:1%;
+}
+.body2{
+  width:45%; /*非常重要的值，没有就不会显示两列*/
+  margin-top:1%;
+  text-align:center;
+  border: 1rpx solid #e8e8e8;
+}
+.body2 image{
+  width:100%;
+  height: 330rpx;
+}
+.body2 .box2{
+}
+.body2 .title{
+
+}
+.body2 .price{
+
 }
 
 .tab{
