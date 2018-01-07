@@ -13,7 +13,8 @@ Page({
     out: [], //热门搜索
     dynamic_name: '', //输入框动态内容
     box: true, //商品单排或双排显示
-    price: true, //价格单排或双排显示
+    price: true, //价格升或降
+    arrow: 0, //价格箭头标红
   },
   onLoad:function(){
     this.loadTips();  //加载“热门搜索”函数
@@ -270,7 +271,7 @@ Page({
     var price = this.data.price
     this.setData({price: !price})
     console.log(price)
-    if(price==true){
+    if(price==false){
       var aa = 'price+asc&q%5Btitle_or_description_cont%5D='
     }else{
       var aa = 'price+desc&q%5Btitle_or_description_cont%5D='

@@ -32,25 +32,31 @@
 <block wx:else>
   <block wx:if="{{cakes != ''}}"><!--当有拿到商品数据cakes时（可以是输入/点击搜索记录/点击热门搜索），显示商品-->
     <view class='tab'>
-      <view class="{{currentTab==0?'select':'default'}}" data-id="0" bindtap='switchAll'>所有</view>
-      <block wx:if="{{price==true}}">
-        <view class="{{currentTab==1?'select':'default'}}" data-id="1" bindtap='switchPrice'>价格</view>
-      </block>
-      <block wx:else>
-        <view class="{{currentTab==1?'select':'default'}}" data-id="1" bindtap='switchPrice'>价格</view>
-      </block>
-      <view class="{{currentTab==2?'select':'default'}}" data-id="2" bindtap='switchTime'>时间</view>
+      <view class="{{currentTab==0?'select':'default'}} common1" bindtap='switchAll'>所有</view>
+
+      <view class="{{currentTab==1?'select':'default'}} price common1" bindtap='switchPrice'>
+        价格
+        <view class='img-pri'>
+          <view class="{{currentTab==1&price==1?'up':'ping'}} img1">▲</view>
+          <view class="{{currentTab==1&price==0?'down':'ping'}} img2">▼</view>
+        </view>
+      </view>
+
+      <view class="{{currentTab==2?'select':'default'}} common1" bindtap='switchTime'>时间</view>
+      
       <block wx:if="{{box==true}}">
-        <view class="row1" bindtap='boxChange'>
+        <view class="row1 common1" bindtap='boxChange'>
           <image src='../../images/icon/row1.png'></image>
         </view>
       </block>
       <block wx:else>
-        <view class="row1" bindtap='boxChange'>
+        <view class="row1 common1" bindtap='boxChange'>
           <image src='../../images/icon/row2.png'></image>
         </view>
       </block>
     </view>
+
+
     <view class="hr"></view>
     <navigator class="{{box==true?'boxs-1':'boxs-2'}}" url='../p_goods/p_goods'>
       <view class="{{box==true?'box1':'box2'}}" wx:for="{{cakes}}">
