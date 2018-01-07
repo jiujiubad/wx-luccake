@@ -43,7 +43,7 @@
       </view>
 
       <view class="{{currentTab==2?'select':'default'}} common1" bindtap='switchTime'>时间</view>
-      
+
       <block wx:if="{{box==true}}">
         <view class="row1 common1" bindtap='boxChange'>
           <image src='../../images/icon/row1.png'></image>

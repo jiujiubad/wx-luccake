@@ -1,34 +1,37 @@
-/* page {
-  height: 100%;
-} */
-/*搜索框*/
-.search {
-  height: 88rpx;
-  padding: 0 30rpx;
+@import "../../utils/p_search.wxss";
+/*搜索框（见utils/p_search.wxss）*/
+.search{
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  padding: 5px;
 }
-.search .input {
-  width: 690rpx;
-  height: 56rpx;
-  background: #ededed;
-  border-radius: 8rpx;
+.searchBg{
+  background-color: #F7F7F7;
+  border-radius: 15px;
+  width: 95%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
 }
-.search image {
-  background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-2fb94833aa.png) center no-repeat;
-  background-size: 100%;
-  width: 28rpx;
-  height: 28rpx;
+.icon_t{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
 }
-.search text {
-  color: #888;
-  padding-left: 10rpx;
-  font-size: 30rpx;
+.icon_t icon{
+  margin-top: 7px;
+  margin-right: 5px;
 }
-
+.icon_t text{
+  color: #ccc;
+  font-size: 25rpx;
+}
+.hr{
+  border-bottom: 0.1rpx solid #666;
+  opacity: 0.2;
+}
 /*分类共用*/
 .category {
   flex: 1;
@@ -52,9 +55,9 @@
   border-left: 6rpx solid #fff;
 }
 .category .left .item.active {
-  color: #ab2b2b;
+  color: #E83D3B;
   font-size: 36rpx;
-  border-left: 6rpx solid #ab2b2b;
+  border-left: 6rpx solid #E83D3B;
 }
 
 

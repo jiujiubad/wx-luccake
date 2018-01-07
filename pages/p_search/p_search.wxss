@@ -1,3 +1,6 @@
+@import "../../utils/p_search.wxss";/*循环商品-按一列或两列显示*/
+
+/*搜索框*/
 .search{
   display: flex;
   flex-direction: row;
@@ -27,7 +30,7 @@
   margin-left: 5px;
 }
 .search text{
-  color: red;
+  color: #E83D3B;
 }
 .clearBtn{
   margin-left: 60px;
@@ -56,14 +59,15 @@
   color: #666;
 }
 .btn2{
-  background-color: red;
-  border-color: red;
+  background-color: #E83D3B;
+  border-color: #E83D3B;
   color: #fff;
 }
 .hr{
-  border:1px solid #cccccc;
+  border-bottom: 0.1rpx solid #666;
   opacity: 0.2;
 }
+/*历史搜索*/
 .title{
   display: flex;
   flex-direction: row;
@@ -97,6 +101,7 @@
   margin-right: 10px;
   margin-bottom: 10px;
 }
+/*搜索框关键词匹配*/
 .item{
   width: 100%;
   padding-left: 10px;
@@ -108,69 +113,10 @@
   margin-bottom: 10px;
 }
 
-.box1{
-  display: flex;
-  padding: 20rpx;
-  border-bottom: 2rpx solid #eee;
-}
-.box1 image{
-  width: 250rpx;
-  height: 250rpx;
-  margin-right: 20rpx;
-}
-.box1 .tap1{
-  flex: 1;
-}
-.box1 .t1{
-  border-radius: 5rpx;
-  background: #EE2E34;
-  color: #fff;
-  font-size: 25rpx;
-  padding: 0 5rpx;
-  margin-right: 20rpx;
-  float:left;
-  height: 34rpx;
-  line-height: 34rpx;
-}
-.box1 .t3{
-  display: block;
-  margin-top: 40rpx;
-  color: red;
-}
-.boxs-2{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-}
-.box2{
-  width:49%; /*非常重要的值，没有就不会显示两列*/
-  margin-bottom: 1%;
-  border: 1rpx solid #e9e9e9;
-}
-.box2 image{
-  width:100%;
-  height: 330rpx;
-}
-.box2 .tap2{
-  padding: 10px;
-}
-.box2 .t1{
-  border-radius: 5rpx;
-  background: #EE2E34;
-  color: #fff;
-  font-size: 25rpx;
-  padding: 0 5rpx;
-  margin-right: 20rpx;
-  float:left;
-  height: 34rpx;
-  line-height: 34rpx;
-}
-.box2 .t3{
-  display: block;
-  margin-top: 20rpx;
-  color: red;
-}
+/*循环商品-按一列显示（见utils/p_search.wxss）*/
+/*循环商品-按两列显示（见utils/p_search.wxss）*/
 
+/*商品导航-按所有、价格、时间排序*/
 .tab{
   clear: both;
   display: flex;
@@ -183,12 +129,7 @@
   padding: 0 40rpx;
 }
 .select{
-  border-bottom: 2rpx solid red;
-}
-.row1 image{
-  width: 25px;
-  height: 25px;
-  margin-top: 8px;
+  color: #E83D3B;
 }
 .price{
   display: flex;
@@ -208,11 +149,16 @@
   margin-top: -30px;
 }
 .up{
-  color: red;
+  color: #E83D3B;
 }
 .down{
-  color: red;
+  color: #E83D3B;
 }
 .ping{
   color: #666;
+}
+.row1 image{
+  width: 25px;
+  height: 25px;
+  margin-top: 8px;
 }

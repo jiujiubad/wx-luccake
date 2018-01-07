@@ -4,12 +4,14 @@ Page({
     categoryList: [],
     left_id: 1,
     curIndex: 0,
+    line: 0,
   },
   onLoad: function (options) {
     this.getCategory();
   },
   getCategory: function () {
     var that = this;
+    var line = this.data.line
     wx.showLoading({
       title: '加载中...',
     });
@@ -22,7 +24,8 @@ Page({
         console.log(res.data)
         that.setData({
           navLeftList: res.data.data,
-          navRightList: res.data.data
+          navRightList: res.data.data,
+          line: 1
         });
         wx.hideLoading();
       }

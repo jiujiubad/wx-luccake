@@ -1,0 +1,64 @@
+/*循环商品-按一列显示*/
+.box1{
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 2rpx solid #eee;
+}
+.box1 image{
+  width: 250rpx;
+  height: 250rpx;
+  margin-right: 20rpx;
+}
+.box1 .tap1{
+  flex: 1;
+}
+.box1 .t1{
+  border-radius: 5rpx;
+  background: #E83D3B;
+  color: #fff;
+  font-size: 25rpx;
+  padding: 0 5rpx;
+  margin-right: 20rpx;
+  float:left;
+  height: 34rpx;
+  line-height: 34rpx;
+}
+.box1 .t3{
+  display: block;
+  margin-top: 40rpx;
+  color: #E83D3B;
+}
+/*循环商品-按两列显示*/
+.boxs-2{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.box2{
+  width:49%; /*非常重要的值，没有就不会显示两列*/
+  margin-bottom: 1%;
+  border: 1rpx solid #e9e9e9;
+}
+.box2 image{
+  width:100%;
+  height: 330rpx;
+}
+.box2 .tap2{
+  padding: 10px;
+}
+.box2 .t1{
+  border-radius: 5rpx;
+  background: #EE2E34;
+  color: #fff;
+  font-size: 25rpx;
+  padding: 0 5rpx;
+  margin-right: 20rpx;
+  float:left;
+  height: 34rpx;
+  line-height: 34rpx;
+}
+.box2 .t3{
+  display: block;
+  margin-top: 20rpx;
+  color: #E83D3B;
+}
