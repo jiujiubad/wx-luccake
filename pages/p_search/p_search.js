@@ -13,6 +13,7 @@ Page({
     out: [], //热门搜索
     dynamic_name: '', //输入框动态内容
     box: true, //商品单排或双排显示
+    price: true, //价格单排或双排显示
   },
   onLoad:function(){
     this.loadTips();  //加载“热门搜索”函数
@@ -266,6 +267,15 @@ Page({
     })
   },
   switchPrice:function(e){ //排序-价格
+    var price = this.data.price
+    this.setData({price: !price})
+    console.log(price)
+    if(price==true){
+      var aa = 'price+asc&q%5Btitle_or_description_cont%5D='
+    }else{
+      var aa = 'price+desc&q%5Btitle_or_description_cont%5D='
+    }
+    console.log(aa)
     var inputValue = this.data.name
     if (!inputValue) {
       return;
@@ -273,7 +283,7 @@ Page({
     var that = this; //保存this的数据
     var utf = encodeURI(inputValue)
     wx.request({
-      url: API_URL2+'price+asc'+API_com1+utf+API_com2,
+      url: API_URL2+aa+utf+API_com2,
       header: {
         'content-type': 'application/json' // 默认值
       },
