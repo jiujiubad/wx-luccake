@@ -3,17 +3,18 @@
     "pages/welcome/welcome",
     "pages/category/category",
     "pages/p_search/p_search",
-    
+
     "pages/p_goods/p_goods",
     "pages/shoppingcart/shoppingcart",
     "pages/order/order",
     "pages/coupon/coupon"
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "99cake",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "backgroundColor": "#fff",

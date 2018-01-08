@@ -16,6 +16,12 @@ Page({
     price: true, //价格升或降
     arrow: 0, //价格箭头标红
   },
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading();// 显示导航栏loading
+    this.onLoad();// 调用接口加载数据
+    wx.hideNavigationBarLoading();// 隐藏导航栏loading
+    wx.stopPullDownRefresh();// 当处理完数据刷新后，停止当前页面的下拉刷新
+  },  
   onLoad:function(){
     this.loadTips();  //加载“热门搜索”函数
     var searchData = wx.getStorageSync('searchData')||[]; //获取缓存里的”历史搜索”数组，分别在clickTip、clickTitle、clickSearchData、searchTitle的函数里设置wx.setStorageSync
