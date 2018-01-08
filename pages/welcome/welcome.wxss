@@ -36,8 +36,6 @@
 .box-intro {
   height: 400rpx;
   width: 100%; /*非常重要的值，没有就不会显示轮播*/
-  position: relative;
-  top: 0;
   z-index: -1;
 }
 .box-intro image {
@@ -59,7 +57,6 @@
 .icon1 text{
   margin-top: 6px;
   font-size: 25rpx;
-  color: #BB9141;
 }
 .hr{
   background-color: #F7F7F7;
