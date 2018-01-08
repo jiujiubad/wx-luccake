@@ -1,7 +1,13 @@
-/**app.wxss**/
+/*颜色
+搜索页红色#E83D3B、首页深黄#BB9141、首页浅黄#D0B47D、首页灰背景#F7F7F7、
+*/
+/*字体
+一号40rpx、二号34rpx、常规28rpx、25rpx
+字粗500、
+*/
+
 page {
-  font-size: 30rpx;
+  font-size: 28rpx;
   color: #666;
-  letter-spacing: 1rpx;
   line-height: 45rpx;
 }

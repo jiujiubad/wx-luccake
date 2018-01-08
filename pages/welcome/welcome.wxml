@@ -14,7 +14,70 @@
   </block>
 </swiper>
 
-<view class="content">
+<view class="wel-icon">
+  <view class="icon1" wx:for="{{icons}}">
+    <image src="{{item.url}}" style="width:32px;height:32px;"/>
+    <text>{{item.log}}</text>
+  </view>
+</view>
+<view class="hr"></view>
+
+<view class="wnyx">
+  <view class='wnyx-head'>♡ 为你优选</view>
+  <view class='wnyx-body'>
+    <view class='wnyx-box' wx:for="{{weldata}}" wx:if="{{index<9}}">
+      <view class='wnyx-title'>{{item.title}}</view>
+      <view class='wnyx-des'>{{discount[index].text}}</view>
+      <view class='wnyx-img'>
+        <image src="{{item.photos[0].avatar.url}}" style="width:95px;height:95px;"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
+
+<view class='hot'>
+  <view class='hot-tab'>
+    <view class='hot-text'>
+      <text class=''>BRAMD</text>
+      <text class='hot-t2'>优选大牌</text>
+    </view>
+    <view class='hot-text'>
+      <text class=''>HOT</text>
+      <text class='hot-t2'>优选热销</text>
+    </view>
+    <view class='hot-text'>
+      <text class=''>GOOD</text>
+      <text class='hot-t2'>优选好货</text>
+    </view>
+  </view>
+  <view class='hot-body'>
+    <view class='hot-title'>
+      <text class=''>“精选一线大牌底价直降”</text>
+    </view>
+    <view class='hot-box' wx:for="{{weldata}}" wx:if="{{index<20}}">
+      <view class='hot-des'>
+        <view class='hot-top'>
+          <view class='hot-des1'>
+            <image src="../../images/icon/marks1.png" style="width:20px;height:20px;"></image>
+          </view>
+          <text class='hot-des2'>自营</text>
+          <view class='hot-des3'>{{item.description}}</view>
+        </view>
+        <view class='hot-bottom'>
+          <text class='hot-des4'>¥</text>
+          <text class='hot-des5'>{{item.price}}</text>
+          <text class='hot-des6'>{{item.title}}</text>
+        </view>
+      </view>
+      <view class='hot-img'>
+        <image src="{{item.photos[0].avatar.url}}" style="width:95px;height:95px;"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class="content">
   <view>
     <view class="title">99cake 优惠券</view>
     <view class="items">
@@ -101,4 +164,4 @@
     <view class='product-text1'>{{item.title}}</view>
     <view class='product-text2'>¥ {{item.price}}</view>
   </view>
-</view>
+</view> -->
