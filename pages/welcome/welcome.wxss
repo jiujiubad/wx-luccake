@@ -59,6 +59,7 @@
 .icon1 text{
   margin-top: 6px;
   font-size: 25rpx;
+  color: #BB9141;
 }
 .hr{
   background-color: #F7F7F7;
@@ -77,6 +78,11 @@
   margin: 20px auto -5px;
   font-size: 40rpx;
   font-weight: 600;
+  color: #333;
+}
+.wnyx-des{
+  font-size: 25rpx;
+  margin-top: 3rpx;
 }
 .wnyx-body{
   display: flex;
@@ -92,6 +98,7 @@
 .wnyx-title{
   font-size: 34rpx;
   font-weight: 600;
+  color: #333;
 }
 .wnyx-des{
   color: #D0B47D;
