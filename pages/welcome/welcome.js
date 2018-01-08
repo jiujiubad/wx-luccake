@@ -1,10 +1,12 @@
 var app = getApp();
 Page({
   data: {
-   movies:[
-   {url:'https://ws2.sinaimg.cn/large/006tNc79gy1fmizuzzadzj30ku0km0u5.jpg'} ,
-   {url:'https://ws4.sinaimg.cn/large/006tNc79gy1fmizuz16u0j30u00u1405.jpg'} ,
-   {url:'https://ws4.sinaimg.cn/large/006tNc79gy1fmizus0vlkj30qm0qmdib.jpg'}
+   intros:[
+   {url:'https://ws3.sinaimg.cn/large/006tNc79gy1fn8bq2pse2j30gw08g3zq.jpg'},
+   {url:'https://ws3.sinaimg.cn/large/006tNc79gy1fn8bq4h8tkj30gw08gwgm.jpg'},
+   {url:'https://ws1.sinaimg.cn/large/006tNc79gy1fn8bq1wwbnj30gw08g0ta.jpg'},
+   {url:'https://ws2.sinaimg.cn/large/006tNc79gy1fn8bq0r1u3j30gw08gab6.jpg'},
+   {url:'https://ws1.sinaimg.cn/large/006tNc79gy1fn8bq1dpiqj30gw08gjso.jpg'}
    ]
   },
   search: function () {

@@ -1,30 +1,52 @@
+/*搜索框（见utils/p_search.wxss）*/
+.search{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  opacity: 0.6;
+  margin-top: 10px;
+}
+.searchBg{
+  background-color: #F7F7F7;
+  border-radius: 15px;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+}
+.icon_t{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+.icon_t icon{
+  margin-top: 7px;
+  margin-right: 5px;
+}
+.icon_t text{
+  color: #ccc;
+  font-size: 25rpx;
+}
+
+/*轮播大图*/
+.box-intro {
+  height: 400rpx;
+  width: 100%; /*非常重要的值，没有就不会显示轮播*/
+  position: relative;
+  top: 0;
+  z-index: -1;
+}
+.box-intro image {
+  width: 100%;
+}
+
+/*优惠券*/
 .content{
   font-family: "Microsoft YaHei";
-}
-.bg{
-  width: 100%;
-  height: 300px;
-  background-color: #FA2A43;
-  text-align: center;
-}
-.logo{
-  margin-top: 40px;
-  border-radius: 50%;
-}
-.search{
-  height: 40px;
-  width: 96%;
-  background-color: #ffffff;
-  margin: 0 auto;
-  margin-top:30px;
-  border-radius: 50px;
-  line-height: 40px;
-}
-.search view{
-  text-align: center;
-  width: 100%;
-  font-size: 15px;
-  color: #999999;
 }
 .title{
   padding:10px;
@@ -72,35 +94,12 @@
   line-height: 30px;
 }
 
-
+/*产品展示*/
 .Box-welcome {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
-
-/*轮播大图*/
-.box-intro {
-  height: 400rpx;
-  width: 100%; /*非常重要的值，没有就不会显示轮播*/
-}
-.box-intro image {
-  width: 100%;
-}
-.box-search icon {
-  margin-right: 40rpx;
-}
-
-/*搜索框*/
-.box-search {
-  width: 100%;
-  text-align: center;
-}
-.box-search input {
-  padding: 20rpx;
-}
-
-/*产品展示*/
 .box-product {
   width:49%; /*非常重要的值，没有就不会显示两列*/
   margin-top:1%;

@@ -1,15 +1,22 @@
+<view class='search'>
+  <navigator url="/pages/p_search/p_search" class="searchBg">
+    <view class="icon_t">
+      <icon type="search" size="17"/>
+      <text>搜索 99cake 商品</text>
+    </view>
+  </navigator>
+</view>
+<swiper class="box-intro" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+  <block wx:for="{{intros}}">
+    <swiper-item>
+       <image src="{{item.url}}" mode="aspectFill"/>
+    </swiper-item>
+  </block>
+</swiper>
+
 <view class="content">
-  <view class="bg">
-    <image src="/images/icon/logo.jpg" style="width:194px;height:146px;" class="logo"></image>
-     <view class="search" bindtap="search">
-     <view>
-       <image src="/images/icon/search.jpg" style="width:20px;height:21px;"></image>
-       搜索京东商品
-     </view>
-  </view>
-  </view>
   <view>
-    <view class="title">发现京东好券</view>
+    <view class="title">99cake 优惠券</view>
     <view class="items">
        <view class="item">
           <view class="priceInfo">
@@ -88,21 +95,8 @@
   </view>
 </view>
 
-
 <view class="Box-welcome">
-  <swiper class="box-intro" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
-    <block wx:for="{{movies}}" wx:key="">
-      <swiper-item>
-         <image src="{{item.url}}" mode="aspectFill"/>
-      </swiper-item>
-    </block>
-  </swiper>
-
-  <view class="box-search">
-    <input type="text" placeholder="翻糖蛋糕清新款" focus/>
-  </view>
-
-  <view class="box-product" wx:for="{{weldata}}" wx:key="" >
+  <view class="box-product" wx:for="{{weldata}}"  >
     <image src='{{item.photos[0].avatar.url}}'></image>
     <view class='product-text1'>{{item.title}}</view>
     <view class='product-text2'>¥ {{item.price}}</view>

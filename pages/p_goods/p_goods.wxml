@@ -1,5 +1,5 @@
 <swiper class="goodsimgs" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
-  <swiper-item wx:for="{{picdata}}" wx:key="">
+  <swiper-item wx:for="{{picdata}}" >
     <image src="{{item.avatar.medium.url}}" ></image>
   </swiper-item>
 </swiper>

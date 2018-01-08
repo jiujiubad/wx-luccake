@@ -1,5 +1,5 @@
 @import "../../utils/p_search.wxss";
-/*搜索框（见utils/p_search.wxss）*/
+/*搜索框*/
 .search{
   display: flex;
   flex-direction: row;
