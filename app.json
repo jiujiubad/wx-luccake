@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/welcome/welcome",
     "pages/category/category",
+    "pages/welcome/welcome",
+    
     "pages/p_search/p_search",
 
     "pages/p_goods/p_goods",

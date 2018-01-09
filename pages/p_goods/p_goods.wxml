@@ -1,27 +1,101 @@
+<view class='hr'></view>
 <swiper class="goodsimgs" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
   <swiper-item wx:for="{{picdata}}" >
-    <image src="{{item.avatar.medium.url}}" ></image>
+    <image src="{{item.avatar.medium.url}}"></image>
   </swiper-item>
 </swiper>
+<view class='hr'></view>
 
-<view class="service-policy">
-  <view class="item">30天无忧退货</view>
-  <view class="item">48小时快速退款</view>
-  <view class="item">满88元免邮费</view>
-</view>
-
-<view class="goods-info">
-  <view class="c">
-    <text class="name">{{goods.title}}</text>
-    <text class="desc">{{goods.description}}</text>
-    <text class="price">￥{{goods.price}}</text>
-    <view class="brand" wx:if="{{brand.name}}">
-      <navigator url="../brandDetail/brandDetail?id={{brand.brandId}}">
-        <text>{{brand.name}}</text>
-      </navigator>
+<view class='goods-info'>
+  <view class='goods-info-top'>
+    <view class='goods-info-title'>
+      <text class='goods-info-t1'>{{goods.title}}</text>
+      <text class='goods-info-t2'>{{goods.description}}</text>
+    </view>
+    <view class='goods-line'></view>
+    <view class='goods-like'>
+      <image src="../../images/goods/collect1.png" style="width:18px;height:18px;"></image>
+      <text class='goods-info-collect'>收藏</text>
+    </view>
+  </view>
+  <view class='goods-info-bottom'>
+    <view class='goods-info-des'>
+      <text>喜迎过年，翻糖好货嗨翻天</text>
+    </view>
+    <view class='goods-price'>
+      <text class='goods-price-1'>￥</text>
+      <text class='goods-price-2'>{{goods.price}}</text>
     </view>
   </view>
 </view>
+<view class="hr-lg"></view>
 
+<view class='select'>
+  <view class='select-tab'>
+    <text class='select-tab1'>已选 4寸，1个</text>
+    <text class='select-tab2'>∧</text>
+  </view>
+  <view class='hr'></view>
+  <view class='select-body'>
+    <view class='select-type'>
+      <text class='type0'>尺寸</text>
+      <view class='type1'>4寸</view>
+      <view class='type2'>6寸</view>
+      <view class='type2'>8寸</view>
+    </view>
+    <view class='select-quantity'>
+      <text class='type0'>数量</text>
+      <view class='cut'>-</view>
+      <view class='count'>1</view>
+      <view class='add'>+</view>
+    </view>
+  </view>
+</view>
+<view class="hr-lg"></view>
 
-  <image class="detail_img" mode="widthFix" src='{{goods.detail_image.url}}'></image>
+<view class='detail-box'>
+  <view class='detail-tab'>
+    <view class=''>
+      <text class=''>商品介绍</text>
+    </view>
+    <view class=''>
+      <text class=''>规格参数</text>
+    </view>
+    <view class=''>
+      <text class=''>售后保障</text>
+    </view>
+  </view>
+  <view class='hr'></view>
+  <view class='detail-body'>
+    <image class="detail_img" mode="widthFix" src='{{goods.detail_image.url}}' style='width:100%;'></image>
+  </view>
+</view>
+
+<view class='buy-box'>
+  <view class='buy-icon'>
+    <view class='buy-shop'>
+      <view class='buy-shop-img'>
+        <image src="../../images/goods/shop.png" style="width:20px;height:20px;"></image>
+      </view>
+      <view class='buy-shop-t'>
+        <text class=''>进店</text>
+      </view>
+    </view>
+    <view class='buy-cart'>
+      <view class='buy-cart-img'>
+        <image src="../../images/goods/cart.png" style="width:20px;height:20px;"></image>
+      </view>
+      <view class='buy-cart-t'>
+        <text class=''>购物车</text>
+      </view>
+    </view>
+  </view>
+  <view class='buy-btn'>
+    <view class='buy-add'>
+      <view class='buy-add-t'>加入购物车</view>
+    </view>
+    <view class='buy-buy'>
+      <view class='buy-buy-t'>立即购买</view>
+    </view>
+  </view>
+</view>
