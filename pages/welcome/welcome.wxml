@@ -25,13 +25,13 @@
 <view class="wnyx">
   <view class='wnyx-head'>♡ 为你优选</view>
   <view class='wnyx-body'>
-    <view class='wnyx-box' wx:for="{{weldata}}" wx:if="{{index<9}}">
+    <navigator class='wnyx-box' url="../p_goods/p_goods?id={{item.id}}"  wx:for="{{weldata}}" wx:if="{{index<9}}">
       <view class='wnyx-title'>{{item.title}}</view>
       <view class='wnyx-des'>{{discount[index].text}}</view>
       <view class='wnyx-img'>
         <image src="{{item.photos[0].avatar.url}}" style="width:95px;height:95px;"></image>
       </view>
-    </view>
+    </navigator>
   </view>
 </view>
 <view class="hr"></view>
@@ -55,7 +55,7 @@
     <view class='hot-title'>
       <text class=''>“精选一线大牌底价直降”</text>
     </view>
-    <view class='hot-box' wx:for="{{weldata}}" wx:if="{{index<20}}">
+    <navigator class='hot-box' url="../p_goods/p_goods?id={{item.id}}" wx:for="{{weldata}}" wx:if="{{index<20}}">
       <view class='hot-des'>
         <view class='hot-top'>
           <view class='hot-des1'>
@@ -73,7 +73,7 @@
       <view class='hot-img'>
         <image src="{{item.photos[0].avatar.url}}" style="width:95px;height:95px;"></image>
       </view>
-    </view>
+    </navigator>
   </view>
 </view>
 
