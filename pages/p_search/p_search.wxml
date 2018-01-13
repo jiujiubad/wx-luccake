@@ -33,17 +33,13 @@
   <block wx:if="{{cakes != ''}}"><!--当有拿到商品数据cakes时（可以是输入/点击搜索记录/点击热门搜索），显示商品-->
     <view class='tab'>
       <view class="{{currentTab==0?'select':'default'}} common1" bindtap='switchAll'>所有</view>
-
-      <view class="{{currentTab==1?'select':'default'}} price common1" bindtap='switchPrice'>
-        价格
+      <view class="{{currentTab==1?'select':'default'}} price common1" bindtap='switchPrice'>价格
         <view class='img-pri'>
           <view class="{{currentTab==1&price==1?'up':'ping'}} img1">▲</view>
           <view class="{{currentTab==1&price==0?'down':'ping'}} img2">▼</view>
         </view>
       </view>
-
       <view class="{{currentTab==2?'select':'default'}} common1" bindtap='switchTime'>时间</view>
-
       <block wx:if="{{box==true}}">
         <view class="row1 common1" bindtap='boxChange'>
           <image src='../../images/icon/row1.png'></image>
@@ -55,7 +51,6 @@
         </view>
       </block>
     </view>
-
 
     <view class="hr"></view>
     <navigator class="{{box==true?'boxs-1':'boxs-2'}}" url='../p_goods/p_goods'>
@@ -71,6 +66,16 @@
   </block>
   <block wx:else><!--如果没有商品数据，则显示初始的搜索页面，即搜索框+历史搜索+热门搜索-->
     <view class="hotSearch">
+      <block wx:if="{{cakes_data==1}}">
+        <view class="warn">
+          <view class='warn-i'>
+            <icon type="warn" size="60" color="#ddd"/>
+          </view>
+          <view>
+            <text class='warn-t'>抱歉！暂无相关商品</text>
+          </view>
+        </view>
+      </block>
       <block wx:if="{{searchData != ''}}">
         <view class="title">
           <view class="left">历史搜索</view>

@@ -15,13 +15,14 @@ Page({
     box: true, //商品单排或双排显示
     price: true, //价格升或降
     arrow: 0, //价格箭头标红
+    cakes_data: 0,
   },
   onPullDownRefresh: function () {
     wx.showNavigationBarLoading();// 显示导航栏loading
     this.onLoad();// 调用接口加载数据
     wx.hideNavigationBarLoading();// 隐藏导航栏loading
     wx.stopPullDownRefresh();// 当处理完数据刷新后，停止当前页面的下拉刷新
-  },  
+  },
   onLoad:function(){
     this.loadTips();  //加载“热门搜索”函数
     var searchData = wx.getStorageSync('searchData')||[]; //获取缓存里的”历史搜索”数组，分别在clickTip、clickTitle、clickSearchData、searchTitle的函数里设置wx.setStorageSync
@@ -74,7 +75,7 @@ Page({
         that.setData({
           cakes: res.data.data,
           name: name,
-          searchData: searchData
+          searchData: searchData,
         })
       }
     })
@@ -105,7 +106,8 @@ Page({
         that.setData({
           cakes: res.data.data,
           name: name,
-          searchData: searchData
+          searchData: searchData,
+          cakes_data: 1,
         })
       }
     })
@@ -190,14 +192,20 @@ Page({
         },
         success: function (res) {
           wx.hideToast();
+          wx.setStorageSync('lll', res.data.data);
           that.setData({
             cakes: res.data.data,
             result: '',
-            searchData: searchData
+            searchData: searchData,
+            cakes_data: 1,
           })
         }
       })
-      console.log('不管是否有搜索结果，显示推荐商品')
+      var lll = wx.getStorageSync('lll')
+      console.log('不管是否有搜索结果，显示推荐商品',lll)
+      if(lll==''){
+        that.setData({has_data:false})
+      }
     }
   },
   showIcon:function(e){
@@ -209,10 +217,10 @@ Page({
     this.searchTitle(e)
   },
   backBtn:function(e){
-    this.setData({name:'',result:'',cakes:''})
+    this.setData({name:'',result:'',cakes:'',cakes_data: 0,})
   },
   clearName:function(e){ //清除输入框内容
-    this.setData({name:'',result:'',cakes:'',dynamic_name:''}) //把数组设置为空，完成”清空输入框“功能
+    this.setData({name:'',result:'',cakes:'',dynamic_name:'',cakes_data:''}) //把数组设置为空，完成”清空输入框“功能
   },
   clickTitle:function(e){ //点击下拉关键词
     var name = e.currentTarget.dataset.title
