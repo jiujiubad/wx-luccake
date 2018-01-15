@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/shoppingcart/shoppingcart",
     "pages/welcome/welcome",
+    "pages/shoppingcart/shoppingcart",
+
     "pages/category/category",
     "pages/p_search/p_search",
 

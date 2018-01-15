@@ -2,7 +2,7 @@
   <view class="info">
     <view class="line"></view>
     <view class="receive">
-      99cake 购物
+      购物车
     </view>
     <view class="line"></view>
     <view class="items">
@@ -13,7 +13,7 @@
               <checkbox value="{{item.id}}" checked="{{selected}}" />
             </view>
             <view class="pic">
-              <image src="{{item.pic}}" style="width:90px;height:80px;"></image>
+              <image src="{{item.pic}}" style="width:95px;height:80px;"></image>
             </view>
             <view class="order">
               <view class="title">{{item.name}}</view>
