@@ -2,7 +2,7 @@
   <view class="info">
     <view class="line"></view>
     <view class="receive">
-      京东购物
+      99cake 购物
     </view>
     <view class="line"></view>
     <view class="items">
@@ -13,13 +13,13 @@
               <checkbox value="{{item.id}}" checked="{{selected}}" />
             </view>
             <view class="pic">
-              <image src="{{item.pic}}" style="width:80px;height:80px;"></image>
+              <image src="{{item.pic}}" style="width:90px;height:80px;"></image>
             </view>
             <view class="order">
-              <view class="title">{{}}</view>
+              <view class="title">{{item.name}}</view>
               <view class="desc">
-                <view>重量：{{item.weight}}</view>
-                <view>规格：{{item.spec}}</view>
+                <view>分类：{{item.weight}}</view>
+                <view>尺寸：{{item.spec}}</view>
               </view>
               <view class="priceInfo">
                 <view class="price">￥{{item.price}}</view>

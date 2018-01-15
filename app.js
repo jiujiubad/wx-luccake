@@ -2,10 +2,8 @@
 App({
   onLaunch: function () {
     // 展示本地存储能力
-    var goods = wx.getStorageSync('goods');
-    if (!goods) {
-      goods = this.loadGoods();
-    }
+    var goods = []
+    goods = this.loadGoods();
     wx.setStorageSync('goods', goods)
 
     // 登录
@@ -44,30 +42,30 @@ App({
     var good = new Object();
     good.id = "0"
     good.pic = '/images/order/1.jpg';
-    good.name = '【京东超市】伊利中老年奶粉听装900g(新老包装)';
-    good.price = '86.00';
-    good.weight = '1.200kg';
-    good.spec = '';
+    good.name = '粉红女孩';
+    good.price = '298.00';
+    good.weight = '女孩';
+    good.spec = '4寸';
     good.count = 1;
     goods[0] = good;
 
     var good1 = new Object();
     good1.id = "1"
     good1.pic = '/images/order/2.jpg';
-    good1.name = 'TP-Link TP-WN726N免驱版 外置天线USB无线网卡';
-    good1.price = '49.00';
-    good1.weight = '0.100kg';
-    good1.spec = '外置天线';
+    good1.name = '男生户外';
+    good1.price = '429.00';
+    good1.weight = '男孩';
+    good1.spec = '8寸';
     good1.count = 1;
     goods[1] = good1;
 
     var good2 = new Object();
     good2.id = "2";
     good2.pic = '/images/order/3.jpg';
-    good2.name = 'Apple iPhone7（A1660）128GB金色移动联通电信4G手机';
-    good2.price = '5499.00';
-    good2.weight = '0.390kg/件';
-    good2.spec = '金色,128GB';
+    good2.name = '海贼王路飞';
+    good2.price = '348.00';
+    good2.weight = '男生';
+    good2.spec = '6寸';
     good2.count = 1;
     goods[2] = good2;
     return goods;
