@@ -89,17 +89,19 @@
           </view>
         </view>
       </block>
-      <view class="title">
-        <view class="left">热门搜索</view>
-        <view class="right" bindtap="loadTips">换一批</view>
-      </view>
-      <view class="tips">
-        <view wx:for="{{out}}" bindtap='clickTip' data-id="{{item.id}}" data-title="{{item.title}}">
-          <view class="tip" >
-            {{item.title}}
+      <block wx:if="{{out_data==1}}">
+        <view class="title">
+          <view class="left">热门搜索</view>
+          <view class="right" bindtap="loadTips">换一批</view>
+        </view>
+        <view class="tips">
+          <view wx:for="{{out}}" bindtap='clickTip' data-id="{{item.id}}" data-title="{{item.title}}">
+            <view class="tip" >
+              {{item.title}}
+            </view>
           </view>
         </view>
-      </view>
+      </block>
     </view>
   </block>
 </block>

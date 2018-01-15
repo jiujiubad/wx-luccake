@@ -15,10 +15,10 @@
 </swiper>
 
 <view class="wel-icon">
-  <view class="icon1" wx:for="{{icons}}">
+  <navigator class="icon1" url="../p_search/p_search?category={{item.log}}" wx:for="{{icons}}">
     <image src="{{item.url}}" style="width:32px;height:32px;"/>
     <text>{{item.log}}</text>
-  </view>
+  </navigator>
 </view>
 <view class="hr"></view>
 

@@ -15,7 +15,8 @@ Page({
     box: true, //商品单排或双排显示
     price: true, //价格升或降
     arrow: 0, //价格箭头标红
-    cakes_data: 0,
+    out_data: 0, //是否搜索到商品，显示不同页面
+    //category_data: 0,//是否有分类信息，显示不同页面
   },
   onPullDownRefresh: function () {
     wx.showNavigationBarLoading();// 显示导航栏loading
@@ -23,12 +24,29 @@ Page({
     wx.hideNavigationBarLoading();// 隐藏导航栏loading
     wx.stopPullDownRefresh();// 当处理完数据刷新后，停止当前页面的下拉刷新
   },
-  onLoad:function(){
-    this.loadTips();  //加载“热门搜索”函数
-    var searchData = wx.getStorageSync('searchData')||[]; //获取缓存里的”历史搜索”数组，分别在clickTip、clickTitle、clickSearchData、searchTitle的函数里设置wx.setStorageSync
-    this.setData({
-      searchData: searchData,
-    })
+  onLoad:function(e){
+    console.log('从首页搜索框',e)
+    var that = this
+    var name0 = e.category
+    if(name0){
+      var utf0 = encodeURI(name0)
+      wx.request({
+        url: 'https://luccake.top/api/v1/products?utf8=%E2%9C%93&name='+utf0+'&commit=%E7%A1%AE%E5%AE%9A',
+        header: {
+          'content-type': 'application/json'
+        },
+        success: function (res) {
+          console.log('分类数组',res.data)
+          that.setData({cakes:res.data.data,out_data:0,name:name0})
+        }
+      })
+    }else{
+      that.loadTips();  //加载“热门搜索”函数
+      var searchData = wx.getStorageSync('searchData')||[]; //获取缓存里的”历史搜索”数组，分别在clickTip、clickTitle、clickSearchData、searchTitle的函数里设置wx.setStorageSync
+      that.setData({
+        searchData: searchData,
+      })
+    }
   },
   loadTips:function(e){ //加载“热门搜索”
     var that = this;
@@ -47,7 +65,7 @@ Page({
       var temp = (Math.random()*word.length)>>0; //随机产生0-word.length的数字。其中Math.random()是js方法，随机产生0-1的数。
       out.push(word[temp]); //把word[temp]放在out数组的最右边，组成新的out数组
     }
-    this.setData({out: out})
+    this.setData({out:out,out_data:1})
   },
   clickTip:function(e){ //点击”热门搜索“
     var name = e.currentTarget.dataset.title
