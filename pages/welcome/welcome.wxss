@@ -34,7 +34,7 @@
 
 /*轮播大图*/
 .box-intro {
-  height: 400rpx;
+  height: 380rpx;
   width: 100%; /*非常重要的值，没有就不会显示轮播*/
   z-index: -1;
 }

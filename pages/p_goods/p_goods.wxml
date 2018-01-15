@@ -99,3 +99,18 @@
     </view>
   </view>
 </view>
+
+
+<view class="ran">
+  <text>————————  你可能会喜欢  ————————</text>
+</view>
+<view class="boxs-2">
+  <navigator class="box2" url='../p_goods/p_goods?id={{item.id}}' wx:for="{{ran}}">
+    <image src="{{item.photos[0].avatar.url}}"></image>
+    <view class="tap2">
+      <text class='t1'>{{item.title}}</text>
+      <text class='t2'>{{item.description}}</text>
+      <text class='t3'>¥ {{item.price}}</text>
+    </view>
+  </navigator>
+</view>

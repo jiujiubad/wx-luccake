@@ -1,3 +1,4 @@
+@import "../../utils/p_search.wxss";/*循环商品-按一列或两列显示*/
 /*轮播图*/
 .goodsimgs{
   width: 100%;
@@ -136,7 +137,6 @@
 .detail-box{
   display: flex;
   flex-direction: column;
-  margin-bottom: 42px;
 }
 .detail-tab{
   display: flex;
@@ -146,6 +146,15 @@
 }
 .detail-body{
   margin-top: 1rpx;
+}
+
+/*推荐商品*/
+.ran{
+  padding: 20px 20px;
+  text-align: center;
+}
+.boxs-2{
+  margin-bottom: 80px;
 }
 
 /*立即购买*/
