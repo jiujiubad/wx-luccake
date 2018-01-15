@@ -37,7 +37,7 @@ Page({
         },
         success: function (res) {
           console.log('分类数组',res.data)
-          that.setData({cakes:res.data.data,out_data:0,name:name0})
+          that.setData({cakes:res.data.data,out_data:0,})
         }
       })
     }else{

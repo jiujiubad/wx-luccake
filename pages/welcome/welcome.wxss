@@ -53,6 +53,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding: 0px;
 }
 .icon1 text{
   margin-top: 6px;
