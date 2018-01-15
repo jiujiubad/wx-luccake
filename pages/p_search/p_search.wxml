@@ -53,16 +53,16 @@
     </view>
 
     <view class="hr"></view>
-    <navigator class="{{box==true?'boxs-1':'boxs-2'}}" url='../p_goods/p_goods'>
-      <view class="{{box==true?'box1':'box2'}}" wx:for="{{cakes}}">
+    <view class="{{box==true?'boxs-1':'boxs-2'}}">
+      <navigator class="{{box==true?'box1':'box2'}}" url='../p_goods/p_goods?id={{item.id}}' wx:for="{{cakes}}">
         <image src="{{item.photos[0].avatar.url}}"></image>
         <view class="{{box==true?'tap1':'tap2'}}">
           <text class='t1'>{{item.title}}</text>
           <text class='t2'>{{item.description}}</text>
           <text class='t3'>¥ {{item.price}}</text>
         </view>
-      </view>
-    </navigator>
+      </navigator>
+    </view>
   </block>
   <block wx:else><!--如果没有商品数据，则显示初始的搜索页面，即搜索框+历史搜索+热门搜索-->
     <view class="hotSearch">
