@@ -48,7 +48,6 @@ Page({
     this.setData({ran:ran})
   },
   switchType:function(e){
-    console.log(e)
     var index = e.currentTarget.dataset.current;
     if (this.data.currentTab == index) {
       return false;
