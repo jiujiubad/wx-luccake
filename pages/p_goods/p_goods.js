@@ -11,7 +11,6 @@ Page({
     wx.stopPullDownRefresh();// 当处理完数据刷新后，停止当前页面的下拉刷新
   },
   onLoad: function (options) {
-    console.log(options)
     var p_id = options.id
     var that = this
     wx.request({
@@ -20,7 +19,6 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        console.log('fff',res.data)
         that.setData({
           picdata: res.data.photos,
           goods: res.data
@@ -45,7 +43,6 @@ Page({
     for(var i=0; i<10; i++){
       var temp = (Math.random()*word.length)>>0; //随机产生0-word.length的数字。其中Math.random()是js方法，随机产生0-1的数。
       ran.push(word[temp]); //把word[temp]放在out数组的最右边，组成新的out数组
-      console.log('ran',ran)
     }
     this.setData({ran:ran})
   },

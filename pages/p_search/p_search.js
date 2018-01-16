@@ -25,7 +25,6 @@ Page({
     wx.stopPullDownRefresh();// 当处理完数据刷新后，停止当前页面的下拉刷新
   },
   onLoad:function(e){
-    console.log('从首页搜索框',e)
     var that = this
     var name0 = e.category
     if(name0){
@@ -36,7 +35,6 @@ Page({
           'content-type': 'application/json'
         },
         success: function (res) {
-          console.log('分类数组',res.data)
           that.setData({cakes:res.data.data,out_data:0,})
         }
       })
@@ -134,7 +132,6 @@ Page({
     var searchData = wx.getStorageSync('searchData')
     wx.setStorageSync('searchData', '') //把数组设置为空，完成”清除历史搜索“功能
     this.setData({searchData: []})
-    console.log(searchData)
   },
   loadTitles:function(e){ //加载“输入关键字词库”
     var that = this; //保存this的数据
@@ -167,7 +164,6 @@ Page({
     wx.setStorageSync('dynamic_e',dynamic_e) //对动态输入的值所在对象(散列)，保存到缓存
     if(name==''){//如果name为空
       this.setData({result:''})
-      console.log('没有输入，返回。')
     }else{//如果name不为空
       var titles = this.loadTitles();
       var result = [];
@@ -181,16 +177,12 @@ Page({
       }
       if(result!=''){//如果有匹配
         this.setData({result:result});
-        console.log('匹配，显示匹配词')
-      }else{//如果没有匹配
-        console.log('没有匹配，返回。')
       }
     }
   },
   searchTitle:function(e){
     var name = e.detail.value;
     if(name==''){
-      console.log('搜索无输入，显示推荐商品')
     }else{
       var searchData = wx.getStorageSync('searchData') || [] //以下三行缓存，同上几个click函数
       searchData.push(name)
@@ -220,7 +212,6 @@ Page({
         }
       })
       var lll = wx.getStorageSync('lll')
-      console.log('不管是否有搜索结果，显示推荐商品',lll)
       if(lll==''){
         that.setData({has_data:false})
       }
@@ -231,7 +222,6 @@ Page({
   },
   searchBtn:function(e){
     var e = wx.getStorageSync('dynamic_e')
-    console.log('dynamic_e',e)
     this.searchTitle(e)
   },
   backBtn:function(e){
@@ -302,13 +292,11 @@ Page({
   switchPrice:function(e){ //排序-价格
     var price = this.data.price
     this.setData({price: !price})
-    console.log(price)
     if(price==false){
       var aa = 'price+asc&q%5Btitle_or_description_cont%5D='
     }else{
       var aa = 'price+desc&q%5Btitle_or_description_cont%5D='
     }
-    console.log(aa)
     var inputValue = this.data.name
     if (!inputValue) {
       return;
