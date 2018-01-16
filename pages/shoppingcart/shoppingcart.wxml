@@ -2,7 +2,7 @@
   <view class="info">
     <view class="line"></view>
     <view class="receive">
-      购物车
+      样品展示
     </view>
     <view class="line"></view>
     <view class="items">
@@ -43,13 +43,13 @@
           </view>
           <view class="amount">
             <view class="total">
-              总计：￥{{totalPrice}}元
+              ￥{{totalPrice}}元
             </view>
             <view>
-              不含运费，已优惠￥0.00
+              精选三款样品，实物请到店参观
             </view>
           </view>
-          <view class="opr">去结算</view>
+          <view class="opr">小 计</view>
         </view>
       </checkbox-group>
     </view>

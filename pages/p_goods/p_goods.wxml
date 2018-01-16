@@ -15,7 +15,7 @@
     <view class='goods-line'></view>
     <view class='goods-like'>
       <image src="../../images/goods/collect1.png" style="width:18px;height:18px;"></image>
-      <text class='goods-info-collect'>收藏</text>
+      <text class='goods-info-collect'>喜欢</text>
     </view>
   </view>
   <view class='goods-info-bottom'>
@@ -23,8 +23,16 @@
       <text>喜迎过年，翻糖好货嗨翻天</text>
     </view>
     <view class='goods-price'>
-      <text class='goods-price-1'>￥</text>
-      <text class='goods-price-2'>{{goods.price}}</text>
+      <text class='goods-price-1'>参考价</text>
+      <block wx:if="{{currentTab==0}}">
+        <text class='goods-price-2'> ¥ {{goods.price-40}}</text>
+      </block>
+      <block wx:if="{{currentTab==1}}">
+        <text class='goods-price-2'> ¥ {{goods.price}}</text>
+      </block>
+      <block wx:if="{{currentTab==2}}">
+        <text class='goods-price-2'> ¥ {{goods.price+100}}</text>
+      </block>
     </view>
   </view>
 </view>
@@ -32,16 +40,24 @@
 
 <view class='select'>
   <view class='select-tab'>
-    <text class='select-tab1'>已选 4寸，1个</text>
+    <block wx:if="{{currentTab==0}}">
+      <text class='select-tab1'>已选 4寸，1个</text>
+    </block>
+    <block wx:if="{{currentTab==1}}">
+      <text class='select-tab1'>已选 6寸，1个</text>
+    </block>
+    <block wx:if="{{currentTab==2}}">
+      <text class='select-tab1'>已选 8寸，1个</text>
+    </block>
     <text class='select-tab2'>∧</text>
   </view>
   <view class='hr'></view>
   <view class='select-body'>
-    <view class='select-type'>
+    <view class="select-type">
       <text class='type0'>尺寸</text>
-      <view class='type1'>4寸</view>
-      <view class='type2'>6寸</view>
-      <view class='type2'>8寸</view>
+      <view class="{{currentTab==0?'type1':'type2'}}" data-current="0" bindtap="switchType">4寸</view>
+      <view class="{{currentTab==1?'type1':'type2'}}" data-current="1" bindtap="switchType">6寸</view>
+      <view class="{{currentTab==2?'type1':'type2'}}" data-current="2" bindtap="switchType">8寸</view>
     </view>
     <view class='select-quantity'>
       <text class='type0'>数量</text>
@@ -56,14 +72,14 @@
 <view class='detail-box'>
   <view class='detail-tab'>
     <view class=''>
-      <text class=''>商品介绍</text>
+      <text class='tab_t1'>商品介绍</text>
     </view>
-    <view class=''>
+    <!-- <view class=''>
       <text class=''>规格参数</text>
     </view>
     <view class=''>
       <text class=''>售后保障</text>
-    </view>
+    </view> -->
   </view>
   <view class='hr'></view>
   <view class='detail-body'>
@@ -73,30 +89,30 @@
 
 <view class='buy-box'>
   <view class='buy-icon'>
-    <view class='buy-shop'>
+    <navigator class='buy-shop' url="../welcome/welcome" open-type="switchTab">
       <view class='buy-shop-img'>
         <image src="../../images/goods/shop.png" style="width:20px;height:20px;"></image>
       </view>
       <view class='buy-shop-t'>
         <text class=''>进店</text>
       </view>
-    </view>
-    <view class='buy-cart'>
+    </navigator>
+    <navigator class='buy-cart' url="../shoppingcart/shoppingcart" open-type="switchTab">
       <view class='buy-cart-img'>
         <image src="../../images/goods/cart.png" style="width:20px;height:20px;"></image>
       </view>
       <view class='buy-cart-t'>
-        <text class=''>购物车</text>
+        <text class=''>样品</text>
       </view>
-    </view>
+    </navigator>
   </view>
   <view class='buy-btn'>
-    <view class='buy-add'>
-      <view class='buy-add-t'>加入购物车</view>
-    </view>
-    <view class='buy-buy'>
-      <view class='buy-buy-t'>立即购买</view>
-    </view>
+    <navigator class='buy-add' url="../category/category" open-type="switchTab">
+      <view class='buy-add-t'>分类</view>
+    </navigator>
+    <navigator class='buy-buy' open-type="navigateBack">
+      <view class='buy-buy-t'>返回</view>
+    </navigator>
   </view>
 </view>
 

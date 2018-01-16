@@ -2,7 +2,8 @@
 Page({
 
   data: {
-    goods:[]
+    goods:[],
+    currentTab:0,
   },
   onPullDownRefresh: function () {
     wx.showNavigationBarLoading();// 显示导航栏loading
@@ -45,5 +46,14 @@ Page({
       ran.push(word[temp]); //把word[temp]放在out数组的最右边，组成新的out数组
     }
     this.setData({ran:ran})
+  },
+  switchType:function(e){
+    console.log(e)
+    var index = e.currentTarget.dataset.current;
+    if (this.data.currentTab == index) {
+      return false;
+    } else {
+      this.setData({ currentTab: index});
+    }
   },
 })

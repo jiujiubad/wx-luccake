@@ -34,11 +34,7 @@
       { "pagePath": "pages/shoppingcart/shoppingcart",
         "iconPath": "images/bar/shoppingcart-0.jpg",
         "selectedIconPath": "images/bar/shoppingcart-1.jpg",
-        "text": "购物车" },
-      { "pagePath": "pages/order/order",
-        "iconPath": "images/bar/order-0.jpg",
-        "selectedIconPath": "images/bar/order-1.jpg",
-        "text": "我的订单" }
+        "text": "样品" }
     ]
   }
 }
